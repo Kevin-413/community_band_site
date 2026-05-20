@@ -91,6 +91,13 @@ ul {
     list-style-position: inside;
 }
 
+@media (max-width: 768px) {
+    .button {
+        white-space: normal;
+        height: auto;
+    }
+}
+
 /* Gives rounded corners and a soft shadow to images, buttons and shapes and buttons */
 .has-soft-corners {
     border-radius: 25px;
