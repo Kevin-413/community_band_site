@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include "head.njk" %}
-<body>
-{# <body> class="is-flex is-flex-direction-column"> #}
+<body class="is-flex is-flex-direction-column">
     {% include "nav.njk" %}
 
-    <div>
+    <div class="is-flex-grow-1">
         {{ content | safe }}
     </div>
 
