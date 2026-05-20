@@ -1,8 +1,8 @@
-<section class="section pb-0">
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<section class="p-0">
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <img src="{{ config.logoUrl }}" alt="{{ config.title }}" width="180" height="auto"/>
+            {% image "src" + config.logoUrl, config.title, "180px" %}
             <a role="button" class="navbar-burger" data-target="navigation-headers" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>

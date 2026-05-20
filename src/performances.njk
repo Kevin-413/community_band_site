@@ -1,30 +1,27 @@
 ---
-layout: page.njk
+layout: wide-page.njk
 title: Performances
 description: Performance schedule for the Amherst Community Band.
 ---
-<section class="section is-flex-grow-1">
-    <h1 class="title is-1 has-text-centered">Performances</h1>
-    <div class="columns">
-        <div class="column is-one-half">
-            <div class="container pl-6">
-            {% for category in config.concerts %}
-                <h2 class="title is-2">{{ category.label }}</h2>
-                {% for concert in category.schedule_items %}
-                    <h4 class="title is-4 mb-2">{{ concert.date_and_time}}</h4>
-                    {% if concert.concert_name %}
-                        <p class="subtitle is-6 mb-2">{{ concert.concert_name }}</p>
-                    {% endif %}
-                    <p class="subtitle is-6 mb-2">{{ concert.location }}</p>
-                    <br>
-                {% endfor %}
+<div class="columns">
+    <div class="column is-one-half is-offset-1">
+        <div class="container pl-6">
+        {% for category in config.concerts %}
+            <h2 class="title is-2">{{ category.label }}</h2>
+            {% for concert in category.schedule_items %}
+                <h4 class="title is-4 mb-2">{{ concert.date_and_time}}</h4>
+                {% if concert.concert_name %}
+                    <p class="subtitle is-6 mb-2">{{ concert.concert_name }}</p>
+                {% endif %}
+                <p class="subtitle is-6 mb-2">{{ concert.location }}</p>
+                <br>
             {% endfor %}
-            </div>
-        </div>
-        <div class="column is-one-half is-vcentered">
-            <figure class="image is-4by3">
-                <iframe class="has-ratio" width="640" height="390" src="https://www.youtube.com/embed/Ip_l4Xkx-84?si=pu06PLu09FGJQytm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </figure>
+        {% endfor %}
         </div>
     </div>
-<section>
+    <div class="column is-one-half is-vcentered">
+        <figure class="has-soft-corners image is-4by3">
+            <iframe class="has-ratio" width="640" height="390" src="https://www.youtube.com/embed/Ip_l4Xkx-84?si=pu06PLu09FGJQytm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </figure>
+    </div>
+</div>

@@ -1,29 +1,23 @@
 ---
-layout: page.njk
+layout: content-page.njk
 title: Donate to the Amherst Community Band
 description: Donate to the Amherst Community Band on Zeffy!
 ---
-<section class="section is-flex-grow-1">
-
-    <div class="container">
-        <div class="columns is-vcentered">
-            <div class="column is-two-thirds">
-                <h1 class="title is-1 has-text-centered">Help us Build a Better Band</h1>
-                <section class="section">
-                    <div class="container pb-5">
-                        <p>It takes a lot to operate a community band. We play about 12 songs per show at a cost of about $100 to buy a single tune. Add signage and transportation and you can see how donations are so vital to the Amherst Community Band. Help us keep the music playing...</p>
-                    </div>
-                    <div class="container has-text-centered ">
-                        <a class="button is-large is-primary has-text-white has-text-weight-bold" href="https://www.zeffy.com/donation-form/keep-the-music-playing">Donate on Zeffy!</a>
-                        <br>
-                        <br>
-                        <img src="/_images/acb_zeffy_qr.png" alt="QR code to Donate on Zeffy" class="responsive" width="200px">
-                    </div>
-                </section>
-            </div>
-            <div class="column is-one-quarter">
-                <img src="/_images/tuba_crane.png", alt="Tuba being lifted by a crane" class="is-rounded">
-            </div>
+<div class="columns is-vcentered">
+    <div class="column is-two-thirds">
+        <div class="container pb-5">
+            <p>It takes a lot to operate a community band. We play about 12 songs per show at a cost of about $100 to buy a single tune. Add signage and transportation and you can see how donations are so vital to the Amherst Community Band. Help us keep the music playing...</p>
+        </div>
+        <div class="container has-text-centered">
+            <a class="button is-large is-primary has-text-white has-text-weight-bold" href="https://www.zeffy.com/donation-form/keep-the-music-playing">Donate on Zeffy!</a>
+            <br>
+            <br>
+            <img src="/_images/acb_zeffy_qr.png" alt="QR code to Donate on Zeffy" loading="lazy" width="200">
         </div>
     </div>
-</section>
+    <div class="column is-one-quarter">
+        <figure>
+            {% image "src/_images/tuba_crane.png", "Tuba being lifted by a crane", "(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 100vw", "has-soft-corners" %}
+        </figure>
+    </div>
+</div>

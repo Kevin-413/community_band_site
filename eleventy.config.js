@@ -5,10 +5,10 @@ module.exports = (config) => {
     config.addPassthroughCopy("src/_css");
 
     // Add responsive image shortcode
-    config.addAsyncShortcode("image", async function(src, alt, sizes = "100vw") {
+    config.addAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
         const metadata = await Image(src, {
-            widths: ["auto"],
-            formats: ["avif", "webp", "jpeg"],
+            widths: [400, 800, 1200, "auto"],
+            formats: ["avif", "webp", "jpeg", "png"],
             outputDir: "./_site/img/",
             urlPath: "/img/",
         });
@@ -18,6 +18,7 @@ module.exports = (config) => {
             sizes,
             loading: "lazy",
             decoding: "async",
+            ...(className && { class: className }),
         };
 
         return Image.generateHTML(metadata, imageAttributes);
