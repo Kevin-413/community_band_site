@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- Updated homepage button link to old schedule page to new performances page
+
 ## [1.2.0] - 5/20/2026
 ### Added
 - Two new Nunjucks templates for easier management of the different page styles
