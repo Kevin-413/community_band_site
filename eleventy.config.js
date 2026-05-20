@@ -8,7 +8,7 @@ module.exports = (config) => {
     config.addAsyncShortcode("image", async function(src, alt, sizes = "100vw") {
         const metadata = await Image(src, {
             widths: ["auto"],
-            formats: ["avif", "webp", "jpeg"],
+            formats: ["avif", "webp", "jpeg", "png"],
             outputDir: "./_site/img/",
             urlPath: "/img/",
         });

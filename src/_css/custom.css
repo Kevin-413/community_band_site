@@ -73,13 +73,17 @@ ul {
     list-style-position: inside;
 }
 
-.is-rounded {
+/* Gives rounded corners and a soft shadow to images, buttons and shapes and buttons */
+.has-soft-corners {
     border-radius: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.has-border {
+    border: 12px solid #E63E2F;
+}
+
 figure {
-    border: 5px solid #E63E2F;
     padding: 8px;
 }
 
