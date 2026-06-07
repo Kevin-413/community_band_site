@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Logos and text on Mass Cultural Council and Amherst Cultural Council to bottom of homepage
+- Pull request template to manage contributions
 
 ### Fixed
 - Updated homepage button link to old schedule page to new performances page
