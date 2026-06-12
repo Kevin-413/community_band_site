@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amherst Community Band - Proposed Home Page Demo</title>
+  <!-- Bulma CSS: same version used on live ACB site; provides font stack and resets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/versions/bulma-no-dark-mode.min.css">
+  <style>
+    /* ACB brand palette — matches src/_css/custom.css on the live site */
+    :root {
+      --acb-red:        #E63E2F;  /* primary logo color */
+      --acb-red-dark:   #d33628;  /* hover/border */
+      --acb-red-light:  #EE786D;  /* lighter tint */
+      --acb-gold:       #C4820E;  /* brass/secondary */
+      --acb-blue:       #6E7DEE;  /* link accent */
+      --acb-teal:       #005F61;  /* Amherst teal */
+      --acb-text:       #222222;
+      --acb-muted:      #5f6b75;
+      --acb-border:     #d8e2ec;
+      --acb-white:      #ffffff;
+      --acb-soft:       #f7f9fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      /* Bulma's exact font stack for consistency with live site */
+      font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        "Helvetica", "Arial", sans-serif;
+      color: var(--acb-text);
+      background: var(--acb-soft);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--acb-red);
+    }
+
+    .site-header {
+      background: #E63E2F;
+      color: var(--acb-white);
+      border-bottom: 4px solid #d33628;
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 0 18px;
+    }
+
+    .acb-logo-wrap {
+      flex: 0 0 auto;
+      padding: 8px 0;
+    }
+
+    .acb-logo-wrap img {
+      width: 170px;
+      height: auto;
+      display: block;
+    }
+
+    .nav {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      min-height: 128px;
+    }
+
+    .nav a {
+      color: var(--acb-white);
+      text-decoration: underline;
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2vw, 2rem);
+      line-height: 1;
+      padding: 54px 22px;
+      display: inline-flex;
+      align-items: center;
+      transition: background-color 0.2s;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      background: #ef3a2b;
+      outline: none;
+    }
+
+    .nav a.is-active {
+      background: #ee2718;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+
+    .home-slideshow {
+      max-width: 980px;
+      margin: 1.1rem auto 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--acb-border);
+      box-shadow: 0 8px 24px rgba(20, 45, 70, 0.15);
+      background: #000;
+      position: relative;
+    }
+
+    .slides {
+      position: relative;
+      height: clamp(240px, 46vw, 500px);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.06);
+    }
+
+    .slide-caption {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 0.8rem;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.66) 100%);
+      border-radius: 8px;
+      padding: 1.15rem 1rem 0.8rem;
+      font-size: clamp(1rem, 1.6vw, 1.22rem);
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+    }
+
+    .slide-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #fff;
+      font-size: 1.7rem;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-control:hover,
+    .slide-control:focus {
+      background: rgba(0, 0, 0, 0.68);
+      outline: none;
+    }
+
+    .slide-control.prev {
+      left: 0.7rem;
+    }
+
+    .slide-control.next {
+      right: 0.7rem;
+    }
+
+    .slide-dots {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      bottom: 0.68rem;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    .slide-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .slide-dot.active {
+      background: #fff;
+      border-color: #fff;
+    }
+
+    .hero {
+      background: var(--acb-white);
+      border: 1px solid var(--acb-border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 1rem 0 1.25rem;
+      box-shadow: 0 2px 12px rgba(20, 45, 70, 0.08);
+    }
+
+    .hero h1 {
+      margin: 0 0 0.5rem;
+      color: var(--acb-red);
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      line-height: 1.08;
+    }
+
+    .hero .tagline {
+      margin: 0 0 1rem;
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      color: var(--acb-muted);
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin-bottom: 1.25rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      border: 2px solid var(--acb-red);
+      background: var(--acb-red);
+      color: var(--acb-white);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--acb-red-dark);
+      border-color: var(--acb-red-dark);
+      color: var(--acb-white);
+    }
+
+    .button.secondary {
+      background: var(--acb-white);
+      color: var(--acb-red);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus {
+      background: #fff0ee;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card {
+      background: var(--acb-white);
+      border: 1px solid var(--acb-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 8px rgba(20, 45, 70, 0.06);
+    }
+
+    .card h2 {
+      margin: 0 0 0.35rem;
+      color: var(--acb-red);
+      font-size: 1.35rem;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--acb-muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .event-details {
+      margin: 0.75rem 0 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .event-details li {
+      padding: 0.18rem 0;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .mini-section {
+      background: var(--acb-white);
+      border: 1px solid var(--acb-border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .mini-section h3 {
+      margin: 0 0 0.35rem;
+      color: var(--acb-red);
+      font-size: 1.08rem;
+    }
+
+    .mini-section p {
+      margin: 0 0 0.75rem;
+      color: var(--acb-muted);
+    }
+
+    .text-link {
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--acb-red);
+    }
+
+    .note {
+      background: #fff3f2;
+      border-left: 5px solid var(--acb-red);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.25rem 0 0;
+    }
+
+    .site-footer {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      text-align: center;
+      color: var(--acb-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 10px;
+      }
+
+      .acb-logo-wrap {
+        padding-left: 6px;
+      }
+
+      .nav {
+        width: 100%;
+        min-height: auto;
+        padding: 4px 0 12px;
+      }
+
+      .nav a {
+        background: transparent;
+        padding: 14px 14px;
+        font-size: 1.05rem;
+      }
+
+      .feature-grid,
+      .sections {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 1.35rem;
+      }
+
+      .slide-control {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="acb-logo-wrap" href="#" aria-label="Amherst Community Band home">
+        <img src="./_images/acb_logo.jpg" alt="Amherst Community Band logo">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">Join Us</a>
+        <a href="#">Donate</a>
+        <a href="#">For Members</a>
+        <a href="#" class="is-active">Performances</a>
+        <a href="#">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="home-slideshow" aria-label="Featured photos slideshow">
+    <div class="slides" id="slides">
+      <figure class="slide active" data-caption="We are the Amherst Community Band.">
+        <img src="./_images/acb-06-30-2025-00.jpg" alt="Amherst Community Band in concert, June 2025">
+      </figure>
+      <figure class="slide" data-caption="We practice. We play. We perform. Together.">
+        <img src="./_images/acb-06-30-2025-02.jpg" alt="Amherst Community Band musicians performing">
+      </figure>
+      <figure class="slide" data-caption="Bringing music to the community since 1948.">
+        <img src="./_images/acb-06-30-2025-10.jpg" alt="Amherst Community Band outdoor summer concert">
+      </figure>
+      <figure class="slide" data-caption="Join us — all skill levels welcome.">
+        <img src="./_images/acb-06-30-2025-11.jpg" alt="Band members on stage at community concert">
+      </figure>
+      <figure class="slide" data-caption="Free outdoor concerts every summer in Amherst.">
+        <img src="./_images/acb-06-30-2025-13.jpg" alt="Audience enjoying Amherst Community Band performance">
+      </figure>
+      <div class="slide-caption" id="slideCaption">We are the Amherst Community Band.</div>
+      <button class="slide-control prev" id="prevSlide" aria-label="Previous slide">&#8249;</button>
+      <button class="slide-control next" id="nextSlide" aria-label="Next slide">&#8250;</button>
+      <div class="slide-dots" id="slideDots" aria-label="Select slide"></div>
+    </div>
+  </section>
+
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Music, community, and welcome.</h1>
+      <p class="tagline">A simple home page concept for the Amherst Community Band website.</p>
+      <p>
+        This demo keeps the site friendly and uncomplicated while making the most important
+        visitor actions easier to find: hear the band, join the band, find member information,
+        and support the band.
+      </p>
+      <div class="button-row">
+        <a class="button" href="#">See Performances</a>
+        <a class="button secondary" href="#">Join the Band</a>
+      </div>
+    </section>
+
+    <section class="feature-grid" aria-label="Featured information">
+      <article class="card">
+        <div class="eyebrow">For visitors</div>
+        <h2>Next Concert</h2>
+        <p>Put the next public performance directly on the home page so visitors do not have to search.</p>
+        <ul class="event-details">
+          <li><strong>Date:</strong> To be added from schedule data</li>
+          <li><strong>Time:</strong> To be added</li>
+          <li><strong>Location:</strong> To be added</li>
+        </ul>
+        <a class="button" href="#">See all performances</a>
+      </article>
+
+      <article class="card">
+        <div class="eyebrow">For members and new players</div>
+        <h2>Rehearsal Information</h2>
+        <p>Keep regular rehearsal information visible and easy to find.</p>
+        <ul class="event-details">
+          <li><strong>When:</strong> Mondays, 6–8 pm</li>
+          <li><strong>Where:</strong> Rehearsal location to be confirmed</li>
+          <li><strong>Who:</strong> Current members and interested players</li>
+        </ul>
+        <a class="button secondary" href="#">Member information</a>
+      </article>
+    </section>
+
+    <section class="sections" aria-label="Simple home page sections">
+      <article class="mini-section">
+        <h3>Join</h3>
+        <p>Interested players can quickly learn how to participate.</p>
+        <a class="text-link" href="#">How to join</a>
+      </article>
+
+      <article class="mini-section">
+        <h3>Performances</h3>
+        <p>Concert dates and locations should be easy for the public to find.</p>
+        <a class="text-link" href="#">Upcoming concerts</a>
+      </article>
+
+      <article class="mini-section">
+        <h3>Members</h3>
+        <p>Rehearsal details and member notes can live in one clear place.</p>
+        <a class="text-link" href="#">Member page</a>
+      </article>
+
+      <article class="mini-section">
+        <h3>Donate</h3>
+        <p>Supporters should see a simple path to help the band continue.</p>
+        <a class="text-link" href="#">Support the band</a>
+      </article>
+    </section>
+
+    <aside class="note">
+      <strong>Demo note:</strong>
+      This is only a proposed visual concept. It uses plain HTML and CSS to show structure,
+      spacing, buttons, and mobile-friendly layout. It does not replace the existing 11ty templates.
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p style="color: var(--acb-red); font-weight: 700; margin-bottom: 0.3rem;">Amherst Community Band</p>
+    <p>Proposed home page demo · Photos from June 30, 2025 concert · June 12, 2026</p>
+    <p style="font-size: 0.8rem; margin-top: 0.5rem;">This is a visual concept for discussion. It does not replace the live 11ty site.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const captionEl = document.getElementById('slideCaption');
+      const dotsWrap = document.getElementById('slideDots');
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+      let current = 0;
+      let timer;
+
+      function renderDots() {
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = 'slide-dot' + (i === current ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          dot.addEventListener('click', () => {
+            show(i);
+            restartAuto();
+          });
+          dotsWrap.appendChild(dot);
+        });
+      }
+
+      function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === current);
+        });
+        captionEl.textContent = slides[current].dataset.caption || '';
+        renderDots();
+      }
+
+      function next() {
+        show(current + 1);
+      }
+
+      function prev() {
+        show(current - 1);
+      }
+
+      function restartAuto() {
+        clearInterval(timer);
+        timer = setInterval(next, 4500);
+      }
+
+      prevBtn.addEventListener('click', () => {
+        prev();
+        restartAuto();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        next();
+        restartAuto();
+      });
+
+      show(0);
+      restartAuto();
+    })();
+  </script>
+</body>
+</html>
