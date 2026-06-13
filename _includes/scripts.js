@@ -19,4 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Explicitly initialize and start the homepage carousel so autoplay is reliable.
+    const carouselEl = document.querySelector('.carousel');
+    if (carouselEl && typeof Flickity !== 'undefined') {
+        const existing = Flickity.data(carouselEl);
+        const flkty = existing || new Flickity(carouselEl, {
+            setGallerySize: true,
+            imagesLoaded: true,
+            cellAlign: 'left',
+            contain: true,
+            autoPlay: 4500,
+            wrapAround: true,
+            pauseAutoPlayOnHover: false
+        });
+        flkty.playPlayer();
+    }
+
 });
