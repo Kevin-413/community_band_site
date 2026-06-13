@@ -1,18 +1,36 @@
 
     <head>
         {% set siteUrl = config.siteUrl or "https://amherstband.org" %}
+        {% set canonicalBaseUrl = config.canonicalSiteUrl or siteUrl %}
         {% set sitePath = config.sitePath or "" %}
         {% set pageTitle = title or config.title %}
         {% set pageDescription = description or "Amherst Community Band concerts, rehearsals, and community music resources in Amherst, Massachusetts." %}
+        {% set pageUrl = canonicalBaseUrl + (page.url | default('/')) %}
+        {% set ogImagePath = (config.defaultShareImage or config.logoUrl or '/_images/acb_logo.jpg') %}
+        {% set ogImageUrl = canonicalBaseUrl + ogImagePath %}
+        {% set pageTitleTag = pageTitle | trim %}
+        {% set siteTitle = config.title | trim %}
+        {% set titleHasSiteName = siteTitle in pageTitleTag %}
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{% if pageTitle == config.title %}{{ pageTitle | escape }}{% else %}{{ pageTitle | escape }} | {{ config.title | escape }}{% endif %}</title>
+        <title>{% if pageTitleTag == siteTitle or titleHasSiteName %}{{ pageTitleTag | escape }}{% else %}{{ pageTitleTag | escape }} | {{ siteTitle | escape }}{% endif %}</title>
         <meta name="description" content="{{ pageDescription | escape }}" />
-        <link rel="canonical" href="{{ siteUrl }}{{ page.url | default('/') | escape }}" />
+        <link rel="canonical" href="{{ canonicalBaseUrl }}{{ page.url | default('/') | escape }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="{{ config.title | escape }}" />
+        <meta property="og:title" content="{{ pageTitle | escape }}" />
+        <meta property="og:description" content="{{ pageDescription | escape }}" />
+        <meta property="og:url" content="{{ pageUrl | escape }}" />
+        <meta property="og:image" content="{{ ogImageUrl | escape }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ pageTitle | escape }}" />
+        <meta name="twitter:description" content="{{ pageDescription | escape }}" />
+        <meta name="twitter:image" content="{{ ogImageUrl | escape }}" />
         {% if noindex %}
             <meta name="robots" content="noindex, nofollow" />
         {% endif %}
         <link rel="icon" type="image/x-icon" href="{{ sitePath }}/_images/favicon.ico">
+        <link rel="apple-touch-icon" href="{{ sitePath }}/_images/favicon.ico">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/versions/bulma-no-dark-mode.min.css">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         {% if eleventy.env.runMode == "build" %}
@@ -25,8 +43,9 @@
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "{{ config.title | escape }}",
-              "url": "{{ siteUrl | escape }}",
-              "logo": "{{ siteUrl | escape }}{{ config.logoUrl | escape }}",
+                            "url": "{{ canonicalBaseUrl | escape }}",
+                            "logo": "{{ canonicalBaseUrl | escape }}{{ config.logoUrl | escape }}",
+                            "description": "Community music in Amherst, Massachusetts.",
               "sameAs": [{% for socialUrl in config.organization.sameAs %}"{{ socialUrl | escape }}"{% if not loop.last %}, {% endif %}{% endfor %}]
             }
         </script>

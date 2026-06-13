@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Kids Music in Western Mass content (music education opportunities for children) integrated into Community Music Links
 
 ### Changed
+- Implemented a cautious SEO/social metadata pass with improved page titles/descriptions, production-domain canonical URLs, Open Graph/Twitter card tags, default share image selection, and apple-touch-icon support
+- Updated Organization and MusicEvent JSON-LD metadata and confirmed robots.txt/sitemap outputs and key internal footer link targets under the project-path build
+- Applied an accessibility-focused button sizing pass: increased button tap targets, padding, and font sizes for CTA/readability while preserving site colors and layout
+- Replaced break-based spacing with a reusable CTA button group gap on Home and Join pages for cleaner stacking and touch spacing on mobile
+- Verified footer content, project-path link behavior, and mobile stacking for the shared footer update across site pages
+- Replaced the shared site footer with compact community-focused content, including functional links for Home, About, Schedule, Join, Donate, Contact, Directions, and Community Music sections
+- Added responsive footer styling so the footer content remains modest and stacks cleanly on mobile while keeping existing site fonts/colors
 - Community Music Links page now includes table of contents with anchor links to Adult and Kids Music sections
 - Kids Music section features music schools, private studios, youth ensembles, and summer programs organized by county
 - Reconciled changelog records between the repo and docs workflow copy

@@ -1,7 +1,7 @@
 ---
 layout: wide-page.njk
-title: Performances
-description: Performance schedule for the Amherst Community Band.
+title: Concert Schedule
+description: See the Amherst Community Band concert schedule with performance dates, times, and locations in Amherst and nearby communities.
 ---
 <div class="columns">
     <div class="column is-one-half is-offset-1">
@@ -37,6 +37,7 @@ description: Performance schedule for the Amherst Community Band.
 </div>
 
 <script type="application/ld+json">
+{% set eventBaseUrl = config.canonicalSiteUrl or config.siteUrl %}
 {
     "@context": "https://schema.org",
     "@graph": [
@@ -44,8 +45,9 @@ description: Performance schedule for the Amherst Community Band.
             {% for concert in category.schedule_items %}
             {
                 "@type": "MusicEvent",
-                "name": "{{ concert.concert_name or (config.title + ' Concert') }}",
-                "startDate": "{{ concert.start_iso or '' }}",
+                "name": "{{ concert.concert_name or (config.title + ' Concert') | escape }}",
+                "startDate": "{{ concert.start_iso | escape }}",
+                "description": "{{ concert.concert_name or (config.title + ' live concert performance') }}",
                 "eventStatus": "https://schema.org/EventScheduled",
                 "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
                 "location": {
@@ -56,9 +58,13 @@ description: Performance schedule for the Amherst Community Band.
                 "organizer": {
                     "@type": "Organization",
                     "name": "{{ config.title }}",
-                    "url": "{{ config.siteUrl }}"
+                    "url": "{{ eventBaseUrl }}"
                 },
-                "url": "{{ config.siteUrl }}{{ page.url }}"
+                "performer": {
+                    "@type": "MusicGroup",
+                    "name": "{{ config.title }}"
+                },
+                "url": "{{ eventBaseUrl }}{{ page.url }}"
             }{% if not (loop.last and loop.parent.last) %},{% endif %}
             {% endfor %}
         {% endfor %}

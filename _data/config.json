@@ -1,9 +1,11 @@
 {
     "title": "Amherst Community Band",
+    "canonicalSiteUrl": "https://amherstband.org",
     "siteUrl": "https://kevin-413.github.io/community_band_site",
     "sitePath": "/community_band_site",
     "url": "/",
     "logoUrl": "/_images/acb_logo.jpg",
+    "defaultShareImage": "/_images/summer_2026.jpg",
     "organization": {
         "sameAs": [
             "https://facebook.com/AmherstCommunityBand"

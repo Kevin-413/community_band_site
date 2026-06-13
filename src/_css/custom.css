@@ -258,6 +258,11 @@ dd {
     color: #2e333d !important;
     font-weight: 500 !important;
     border-color: transparent !important;
+    min-height: 48px;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.2;
 }
 
 .button:hover,
@@ -274,6 +279,25 @@ dd {
     border-color: #7a1515 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
+    min-height: 52px;
+    padding: 0.85rem 1.4rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.button.is-large {
+    min-height: 52px;
+    height: auto;
+    padding: 0.85rem 1.4rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.acb-button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .button.acb-solid-button:hover,
@@ -293,6 +317,10 @@ dd {
     .button {
         white-space: normal;
         height: auto;
+    }
+
+    .acb-button-group .button {
+        width: min(100%, 32rem);
     }
 
     .carousel-cell .carousel-caption {
@@ -317,6 +345,74 @@ dd {
 
 .has-border {
     border: 12px solid #E63E2F;
+}
+
+.acb-footer {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+}
+
+.acb-footer .container {
+    text-align: center;
+}
+
+.acb-footer p {
+    margin-bottom: 0.45rem;
+}
+
+.acb-footer-title {
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.acb-footer-subtitle,
+.acb-footer-links,
+.acb-footer-community-title,
+.acb-footer-credit,
+.acb-footer-copyright {
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.acb-footer-community-title {
+    margin-top: 0.65rem;
+    font-weight: 700;
+}
+
+.acb-footer-links a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.acb-footer-links a:hover,
+.acb-footer-links a:focus {
+    color: #ffffff;
+    text-decoration-thickness: 2px;
+}
+
+.acb-footer-credit {
+    margin-top: 0.65rem;
+    opacity: 0.82;
+}
+
+.acb-footer-copyright {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .acb-footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .acb-footer-subtitle,
+    .acb-footer-links,
+    .acb-footer-community-title,
+    .acb-footer-credit,
+    .acb-footer-copyright {
+        font-size: 0.88rem;
+    }
 }
 
 figure {
