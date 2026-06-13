@@ -112,3 +112,59 @@ figure {
     padding: 8px;
 }
 
+/* Kids Music page readability and vertical rhythm */
+.kids-music-page .kids-intro {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+}
+
+.kids-music-page h2.title {
+    font-size: clamp(2rem, 3.1vw, 2.5rem);
+    line-height: 1.2;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.kids-music-page h3.title {
+    font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+    line-height: 1.25;
+    margin-top: 1.6rem;
+    margin-bottom: 0.55rem;
+}
+
+.kids-music-page ul {
+    margin-top: 0.15rem;
+    margin-bottom: 0.9rem;
+    padding-left: 1.1rem;
+    list-style-position: outside;
+}
+
+.kids-music-page li {
+    line-height: 1.65;
+    margin-bottom: 0.25rem;
+    font-size: 1.08rem;
+}
+
+.kids-music-page .kids-footer-note {
+    margin-top: 1.75rem;
+    font-size: 1.06rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .kids-music-page .kids-intro,
+    .kids-music-page li,
+    .kids-music-page .kids-footer-note {
+        font-size: 1rem;
+    }
+
+    .kids-music-page h2.title {
+        margin-top: 1.9rem;
+    }
+
+    .kids-music-page h3.title {
+        margin-top: 1.2rem;
+    }
+}
+
