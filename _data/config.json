@@ -1,7 +1,13 @@
 {
     "title": "Amherst Community Band",
+    "siteUrl": "https://amherstband.org",
     "url": "/",
     "logoUrl": "/_images/acb_logo.jpg",
+    "organization": {
+        "sameAs": [
+            "https://facebook.com/AmherstCommunityBand"
+        ]
+    },
     "navbarMenu": [
         {
             "anchor": "Home",
@@ -38,24 +44,39 @@
             "schedule_items": [
                 {
                     "date_and_time":"Saturday, June 27th, 6:30pm",
-                    "location":"Sweetser Park, Amherst, MA 01002, Amherst, MA 01002"
+                    "start_iso": "2026-06-27T18:30:00-04:00",
+                    "location_name": "Sweetser Park",
+                    "location_address": "Amherst, MA 01002",
+                    "location":"Sweetser Park, Amherst, MA 01002"
                 },
                 {
                     "date_and_time":"Saturday, July 3rd, 8pm",
+                    "start_iso": "2026-07-03T20:00:00-04:00",
                     "concert_name":"4th of July Fireworks",
+                    "location_name": "McGuirk Alumni Stadium",
+                    "location_address": "Stadium Drive, Hadley, MA 01003",
                     "location":"McGuirk Stadium, Stadium Drive, Hadley, Massachusetts 01003"
                 },
                 {
                     "date_and_time":"Saturday, July 25th, 6:30pm",
-                    "location":"Sweetser Park, Amherst, MA 01002, Amherst, MA 01002"
+                    "start_iso": "2026-07-25T18:30:00-04:00",
+                    "location_name": "Sweetser Park",
+                    "location_address": "Amherst, MA 01002",
+                    "location":"Sweetser Park, Amherst, MA 01002"
                 },
                 {
                     "date_and_time":"Saturday, August 15th, 6:30pm",
-                    "location":"Sweetser Park, Amherst, MA 01002, Amherst, MA 01002"
+                    "start_iso": "2026-08-15T18:30:00-04:00",
+                    "location_name": "Sweetser Park",
+                    "location_address": "Amherst, MA 01002",
+                    "location":"Sweetser Park, Amherst, MA 01002"
                 },
                 {
                     "date_and_time":"Tuesday, August 18th, 6:30pm",
+                    "start_iso": "2026-08-18T18:30:00-04:00",
                     "concert_name":"Best of the Summer",
+                    "location_name": "South Amherst Common",
+                    "location_address": "Amherst, MA 01002, USA",
                     "location":"South Amherst Common, Amherst, MA 01002, USA"
                 }
             ]

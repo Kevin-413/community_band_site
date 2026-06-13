@@ -1,10 +1,16 @@
 
     <head>
+        {% set siteUrl = config.siteUrl or "https://amherstband.org" %}
+        {% set pageTitle = title or config.title %}
+        {% set pageDescription = description or "Amherst Community Band concerts, rehearsals, and community music resources in Amherst, Massachusetts." %}
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ title | escape }}</title>
-        <meta name="description" content="{{ description | escape }}" />
-        <link rel="canonical" href="{{ page.url | escape }}" />
+        <title>{% if pageTitle == config.title %}{{ pageTitle | escape }}{% else %}{{ pageTitle | escape }} | {{ config.title | escape }}{% endif %}</title>
+        <meta name="description" content="{{ pageDescription | escape }}" />
+        <link rel="canonical" href="{{ siteUrl }}{{ page.url | default('/') | escape }}" />
+        {% if noindex %}
+            <meta name="robots" content="noindex, nofollow" />
+        {% endif %}
         <link rel="icon" type="image/x-icon" href="/_images/favicon.ico">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/versions/bulma-no-dark-mode.min.css">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -13,5 +19,15 @@
         {% else %}
             <link rel="stylesheet" href="/_css/custom.css">
         {% endif %}
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "{{ config.title | escape }}",
+              "url": "{{ siteUrl | escape }}",
+              "logo": "{{ siteUrl | escape }}{{ config.logoUrl | escape }}",
+              "sameAs": [{% for socialUrl in config.organization.sameAs %}"{{ socialUrl | escape }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+            }
+        </script>
     </head>
 

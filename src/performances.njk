@@ -6,14 +6,24 @@ description: Performance schedule for the Amherst Community Band.
 <div class="columns">
     <div class="column is-one-half is-offset-1">
         <div class="container pl-6">
+        <p>All concert times are listed in Eastern Time.</p>
         {% for category in config.concerts %}
             <h2 class="title is-2">{{ category.label }}</h2>
             {% for concert in category.schedule_items %}
-                <h4 class="title is-4 mb-2">{{ concert.date_and_time}}</h4>
+                <h3 class="title is-4 mb-2">
+                    {% if concert.start_iso %}
+                        <time datetime="{{ concert.start_iso }}">{{ concert.date_and_time }}</time>
+                    {% else %}
+                        {{ concert.date_and_time }}
+                    {% endif %}
+                </h3>
                 {% if concert.concert_name %}
                     <p class="subtitle is-6 mb-2">{{ concert.concert_name }}</p>
                 {% endif %}
-                <p class="subtitle is-6 mb-2">{{ concert.location }}</p>
+                <p class="subtitle is-6 mb-2">{{ concert.location_name or concert.location }}</p>
+                {% if concert.location_address %}
+                    <p class="subtitle is-6 mb-2">{{ concert.location_address }}</p>
+                {% endif %}
                 <br>
             {% endfor %}
         {% endfor %}
@@ -25,3 +35,33 @@ description: Performance schedule for the Amherst Community Band.
         </figure>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {% for category in config.concerts %}
+            {% for concert in category.schedule_items %}
+            {
+                "@type": "MusicEvent",
+                "name": "{{ concert.concert_name or (config.title + ' Concert') }}",
+                "startDate": "{{ concert.start_iso or '' }}",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                "location": {
+                    "@type": "Place",
+                    "name": "{{ concert.location_name or concert.location }}",
+                    "address": "{{ concert.location_address or concert.location }}"
+                },
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "{{ config.title }}",
+                    "url": "{{ config.siteUrl }}"
+                },
+                "url": "{{ config.siteUrl }}{{ page.url }}"
+            }{% if not (loop.last and loop.parent.last) %},{% endif %}
+            {% endfor %}
+        {% endfor %}
+    ]
+}
+</script>
