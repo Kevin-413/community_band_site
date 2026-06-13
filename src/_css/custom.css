@@ -360,6 +360,30 @@ figure {
     padding: 0.85rem 1rem;
 }
 
+.acb-community-links-list {
+    display: block;
+}
+
+.acb-community-links-list dt,
+.acb-community-links-list dd {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.acb-community-links-list dt {
+    margin-top: 0.9rem;
+}
+
+.acb-community-links-list dt a {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.acb-community-links-list dd {
+    margin-top: 0.2rem;
+}
+
 .acb-regular-page,
 .acb-wide-page {
     max-width: 100%;
