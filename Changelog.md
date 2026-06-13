@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Homepage funding logos and grant acknowledgment for Mass Cultural Council and Amherst Cultural Council
 - Pull request template to manage contributions
 - Community Music Links page with approved regional music links
+- Kids Music in Western Mass page with music education opportunities for children
 
 ### Changed
 - Reconciled changelog records between the repo and docs workflow copy
