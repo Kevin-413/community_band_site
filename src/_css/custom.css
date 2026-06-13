@@ -183,12 +183,33 @@ h4,
 .acb-contact-nav-button {
     margin-left: auto;
     align-self: center;
-    min-height: 2.25rem;
+    min-height: 2.9rem;
     height: auto;
-    padding: 0.35rem 0.85rem;
-    font-size: 0.95rem;
-    line-height: 1.2;
+    padding: 0.55rem 1.2rem;
+    font-size: 1rem;
+    line-height: 1;
     white-space: nowrap;
+    border-radius: 9999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(246, 246, 246, 0.9) 100%) !important;
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.18),
+        0 9px 16px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    color: #000000 !important;
+    font-weight: 700;
+    transform: translateY(-1px);
+    transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.acb-contact-nav-button:hover,
+.acb-contact-nav-button:focus {
+    color: #000000 !important;
+    transform: translateY(0);
+    box-shadow:
+        0 2px 0 rgba(0, 0, 0, 0.18),
+        0 6px 12px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 @media screen and (min-width: 1024px) {
@@ -286,10 +307,10 @@ dd {
 
 .button.acb-solid-button,
 .button.is-primary.acb-solid-button {
-    background-color: #7a1515 !important;
-    border-color: #7a1515 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    border-color: transparent !important;
+    color: #000000 !important;
+    font-weight: 500 !important;
     min-height: 52px;
     padding: 0.85rem 1.4rem;
     font-size: 1.1rem;
@@ -315,9 +336,9 @@ dd {
 .button.is-primary.acb-solid-button:hover,
 .button.acb-solid-button:focus,
 .button.is-primary.acb-solid-button:focus {
-    background-color: #5f1010 !important;
-    border-color: #5f1010 !important;
-    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-color: transparent !important;
+    color: #000000 !important;
 }
 
 @media (max-width: 768px) {

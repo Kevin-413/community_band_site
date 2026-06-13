@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Kids Music in Western Mass content (music education opportunities for children) integrated into Community Music Links
 
 ### Changed
+- Made the top-right Contact button larger, rounder, and more 3D-looking for clearer prominence
+- Restyled the season signup and concert schedule buttons to use the light button treatment with black text
+- Renamed the footer contact link to Webmaster
 - Added a shared top-right Contact button and reusable Formspree contact modal so every page can open the same contact popup
 - Wired the contact form to Formspree with POST submission and named fields for ready-to-use contact handling
 - Implemented a cautious SEO/social metadata pass with improved page titles/descriptions, production-domain canonical URLs, Open Graph/Twitter card tags, default share image selection, and apple-touch-icon support
