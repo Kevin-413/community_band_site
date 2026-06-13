@@ -7,7 +7,7 @@ description: The homepage of the Amherst Community Band from Amherst, Massachuse
     <div class="hero-body pt-2">
         <h1 class="is-sr-only">Amherst Community Band</h1>
         <div class="carousel"
-        data-flickity='{"setGallerySize":true,"autoPlay":5000,"wrapAround":true,"pauseAutoPlayOnHover":false}'>
+        data-flickity='{"setGallerySize":true,"imagesLoaded":true,"cellAlign":"left","contain":true,"autoPlay":4500,"wrapAround":true,"pauseAutoPlayOnHover":false}'>
             {% for slide in config.carouselImages %}
                 <div class="carousel-cell">
                     <p class="carousel-caption">{{ slide.caption|safe }}</p>
