@@ -1,0 +1,2 @@
+- [x] What contact info should go where? (Strongly recommend against putting just John's email on the site) ? For now we will rely on Google forms -VP 5/19/26
+- [x] Do we want a link to sign up for the newsletter? Again, will mainly use Google Forms -VP 5/19/26

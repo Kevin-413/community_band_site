@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.njk" %}
+<body class="is-flex is-flex-direction-column">
+    {% include "nav.njk" %}
+
+    <div class="is-flex-grow-1">
+        {{ content | safe }}
+    </div>
+
+    {% include "footer.njk" %}
+
+    {% if eleventy.env.runMode == "build" %}
+        <script src="/_js/scripts.min.js"></script>
+    {% else %}
+    {% set js %}
+        {% include "scripts.js" %}
+    {% endset %}
+        <script>
+            {{ js | safe }}
+        </script>
+    {% endif %}
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </body>
+</html>
