@@ -11,7 +11,7 @@
     {% include "footer.njk" %}
 
     {% if eleventy.env.runMode == "build" %}
-        <script src="/_js/scripts.min.js"></script>
+        <script src="{{ config.sitePath or '' }}/_js/scripts.min.js"></script>
     {% else %}
     {% set js %}
         {% include "scripts.js" %}

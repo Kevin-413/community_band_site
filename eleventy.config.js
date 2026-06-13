@@ -1,4 +1,5 @@
 const Image = require("@11ty/eleventy-img");
+const siteConfig = require("./_data/config.json");
 
 module.exports = (config) => {
     config.addPassthroughCopy("src/_images");
@@ -10,7 +11,7 @@ module.exports = (config) => {
             widths: [400, 800, 1200, "auto"],
             formats: ["avif", "webp", "jpeg", "png"],
             outputDir: "./_site/img/",
-            urlPath: "/img/",
+            urlPath: `${siteConfig.sitePath || ""}/img/`,
         });
 
         const imageAttributes = {

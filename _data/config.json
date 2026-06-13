@@ -1,6 +1,7 @@
 {
     "title": "Amherst Community Band",
-    "siteUrl": "https://amherstband.org",
+    "siteUrl": "https://kevin-413.github.io/community_band_site",
+    "sitePath": "/community_band_site",
     "url": "/",
     "logoUrl": "/_images/acb_logo.jpg",
     "organization": {
@@ -11,31 +12,31 @@
     "navbarMenu": [
         {
             "anchor": "Home",
-            "url": "/index/"
+            "url": "/community_band_site/"
         },
         {
             "anchor": "Join Us",
-            "url": "/join/"
+            "url": "/community_band_site/join/"
         },
         {
             "anchor": "Donate",
-            "url": "/donate/"
+            "url": "/community_band_site/donate/"
         },
         {
             "anchor": "For Members",
-            "url": "/members/"
+            "url": "/community_band_site/members/"
         },
         {
             "anchor": "Performances",
-            "url": "/performances/"
+            "url": "/community_band_site/performances/"
         },
         {
             "anchor": "About Us",
-            "url": "/about/"
+            "url": "/community_band_site/about/"
         },
         {
             "anchor": "Community Music Links",
-            "url": "/community-music-links/"
+            "url": "/community_band_site/community-music-links/"
         }
     ],
     "concerts":[
