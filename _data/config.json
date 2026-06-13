@@ -26,6 +26,10 @@
         {
             "anchor": "About Us",
             "url": "/about/"
+        },
+        {
+            "anchor": "Community Music Links",
+            "url": "/community-music-links/"
         }
     ],
     "concerts":[
