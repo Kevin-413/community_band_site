@@ -1,6 +1,6 @@
 # Puppeteer Smoke QA Report
 
-- Generated: 2026-06-13T02:25:17.259Z
+- Generated: 2026-06-13T04:12:49.890Z
 - Base URL: http://localhost:8081
 - Pages tested: 15
 - Screenshots saved: 15
