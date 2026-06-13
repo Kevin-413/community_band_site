@@ -9,14 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Homepage funding logos and grant acknowledgment for Mass Cultural Council and Amherst Cultural Council
 - Pull request template to manage contributions
-- Community Music Links page with approved regional music links
-- Kids Music in Western Mass page with music education opportunities for children
+- Community Music Links page with approved regional music links including Adult Music and Kids Music sections
+- Kids Music in Western Mass content (music education opportunities for children) integrated into Community Music Links
 
 ### Changed
+- Community Music Links page now includes table of contents with anchor links to Adult and Kids Music sections
+- Kids Music section features music schools, private studios, youth ensembles, and summer programs organized by county
 - Reconciled changelog records between the repo and docs workflow copy
 - Added Community Music Links item to site navigation
 - Expanded Community Music Links page to include Adult Music in Western Mass sections and county titles for community choruses
 - Updated Community Music Links entry from Greenfield Military Band to Greenfield Community Band with the new website link and historical note
+- Completed assessment-first universal style audit across Home, About, Community Music Links, and Kids pages
+- Refined universal typography and spacing tokens in custom CSS with smaller laptop nav text, normalized content list rhythm, and reduced Kids-only overrides
+- Aligned the universal style layer to the live amherstband.org Inter-based typography and white button treatment, with a contrast fix for primary CTA text
 
 ### Fixed
 - Updated homepage button link from the old schedule page to the Performances page

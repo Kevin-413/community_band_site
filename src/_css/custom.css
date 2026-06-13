@@ -1,5 +1,5 @@
 /* Use logo color as primary color for bulma*/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
 :root {
   --bulma-primary-h: 5deg;
@@ -15,10 +15,18 @@
   --bulma-success-s: 79%;
   --bulma-success-l: 68%;
 
-    --acb-font-display: "Playfair Display", Georgia, serif;
-    --acb-font-body: "Source Sans Pro", Arial, sans-serif;
+    --acb-font-display: Inter, "SF Pro", "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --acb-font-body: Inter, "SF Pro", "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
     --acb-font-size-body: 16px;
-    --acb-line-height-body: 1.6;
+    --acb-line-height-body: 1.5;
+    --acb-h1-size: 2rem;
+    --acb-h2-size: 2rem;
+    --acb-h3-size: 1.5rem;
+    --acb-h4-size: 1.375rem;
+    --acb-space-section: 1.5rem;
+    --acb-space-subsection: 1rem;
+    --acb-list-indent: 1.15rem;
+    --acb-nav-font-size: 1.3rem;
 }
 /* Corresponding hex color codes
 --color-1: #E63E2F;
@@ -38,6 +46,7 @@ body {
     font-family: var(--acb-font-body);
     font-size: var(--acb-font-size-body);
     line-height: var(--acb-line-height-body);
+    color: #404654;
 }
 
 p,
@@ -48,7 +57,7 @@ dd,
 .content dd {
     font-family: var(--acb-font-body);
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 h1,
@@ -67,39 +76,41 @@ h4,
 h1,
 .title.is-1,
 .content h1 {
-    font-size: clamp(2.2rem, 4vw, 2.9rem);
-    line-height: 1.2;
-    font-weight: 400;
-    margin-bottom: 1rem;
+    font-size: var(--acb-h1-size);
+    line-height: 1.125;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
 }
 
 h2,
+.title,
 .title.is-2,
 .title.is-3,
 .content h2 {
-    font-size: clamp(1.9rem, 3vw, 2.35rem);
-    line-height: 1.3;
-    font-weight: 400;
-    margin-top: 2rem;
-    margin-bottom: 0.9rem;
+    font-size: var(--acb-h2-size);
+    line-height: 1.125;
+    font-weight: 800;
+    margin-top: var(--acb-space-section);
+    margin-bottom: 1.5rem;
 }
 
 h3,
 .title.is-4,
 .content h3 {
-    font-size: clamp(1.45rem, 2.2vw, 1.85rem);
-    line-height: 1.35;
-    font-weight: 700;
-    margin-top: 1.3rem;
+    font-size: var(--acb-h3-size);
+    line-height: 1.125;
+    font-weight: 800;
+    margin-top: var(--acb-space-subsection);
     margin-bottom: 0.6rem;
 }
 
 h4,
+.title.is-5,
 .content h4 {
     font-family: var(--acb-font-body);
-    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
-    line-height: 1.4;
-    font-weight: 600;
+    font-size: var(--acb-h4-size);
+    line-height: 1.25;
+    font-weight: 400;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -129,8 +140,8 @@ h4,
 
 .navbar.is-primary .navbar-item {
     color: white;
-    font-weight: bold;
-    font-size: 1.3rem;
+    font-weight: 700;
+    font-size: var(--acb-nav-font-size);
 }
 
 .navbar.is-primary .navbar-item:hover {
@@ -160,9 +171,35 @@ dd {
     padding: 2px 4px;
 }
 
-ul {
+.content ul {
     list-style-type: disc;
-    list-style-position: inside;
+    list-style-position: outside;
+    padding-left: var(--acb-list-indent);
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.content ol {
+    list-style-position: outside;
+    padding-left: var(--acb-list-indent);
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.button,
+.button.is-primary {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    color: #2e333d !important;
+    font-weight: 500 !important;
+    border-color: transparent !important;
+}
+
+.button:hover,
+.button.is-primary:hover,
+.button:focus,
+.button.is-primary:focus {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #2e333d !important;
 }
 
 @media (max-width: 768px) {
@@ -188,21 +225,17 @@ figure {
 
 /* Kids Music page readability and vertical rhythm */
 .kids-music-page .kids-intro {
-    font-size: 1.15rem;
-    line-height: 1.65;
+    font-size: 1rem;
+    line-height: 1.5;
     margin-bottom: 1.25rem;
 }
 
 .kids-music-page h2.title {
-    font-size: clamp(2rem, 3.1vw, 2.5rem);
-    line-height: 1.2;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
 }
 
 .kids-music-page h3.title {
-    font-size: clamp(1.45rem, 2.2vw, 1.9rem);
-    line-height: 1.25;
     margin-top: 1.6rem;
     margin-bottom: 0.55rem;
 }
@@ -215,15 +248,15 @@ figure {
 }
 
 .kids-music-page li {
-    line-height: 1.65;
+    line-height: 1.5;
     margin-bottom: 0.25rem;
-    font-size: 1.08rem;
+    font-size: 1rem;
 }
 
 .kids-music-page .kids-footer-note {
     margin-top: 1.75rem;
-    font-size: 1.06rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
