@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reconciled changelog records between the repo and docs workflow copy
 - Added Community Music Links item to site navigation
 - Expanded Community Music Links page to include Adult Music in Western Mass sections and county titles for community choruses
+- Updated Community Music Links entry from Greenfield Military Band to Greenfield Community Band with the new website link and historical note
 
 ### Fixed
 - Updated homepage button link from the old schedule page to the Performances page
