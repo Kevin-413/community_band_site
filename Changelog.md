@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Reconciled changelog records between the repo and docs workflow copy
 - Added Community Music Links item to site navigation
+- Expanded Community Music Links page to include Adult Music in Western Mass sections and county titles for community choruses
 
 ### Fixed
 - Updated homepage button link from the old schedule page to the Performances page
