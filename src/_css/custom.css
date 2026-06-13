@@ -27,6 +27,7 @@
     --acb-space-subsection: 1rem;
     --acb-list-indent: 1.15rem;
     --acb-nav-font-size: 1.3rem;
+    --acb-banner-height: 104px;
 }
 /* Corresponding hex color codes
 --color-1: #E63E2F;
@@ -150,9 +151,23 @@ h4,
     height: 50%;
 }
 
+.navbar.is-primary {
+    min-height: var(--acb-banner-height);
+}
+
+.navbar.is-primary .navbar-brand {
+    min-height: var(--acb-banner-height);
+    align-items: center;
+}
+
 .navbar-brand img {
-    width: 180px;
-    height: auto;
+    width: auto;
+    height: calc(var(--acb-banner-height) - 14px);
+    max-height: none;
+}
+
+.navbar.is-primary .navbar-menu {
+    align-items: center;
 }
 
 .navbar.is-primary .navbar-item {
@@ -163,6 +178,24 @@ h4,
 
 .navbar.is-primary .navbar-item:hover {
     color: white;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar.is-primary .navbar-start {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .navbar.is-primary .navbar-start::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar.is-primary .navbar-item {
+        line-height: 1;
+        white-space: nowrap;
+        flex: 0 0 auto;
+    }
 }
 
 figure picture img {
@@ -236,6 +269,10 @@ dd {
 }
 
 @media (max-width: 768px) {
+    :root {
+        --acb-banner-height: 78px;
+    }
+
     .button {
         white-space: normal;
         height: auto;
