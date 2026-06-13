@@ -186,6 +186,12 @@ dd {
     margin-bottom: 1rem;
 }
 
+.content h2[id],
+.content h3[id],
+.content h4[id] {
+    scroll-margin-top: 5.25rem;
+}
+
 .button,
 .button.is-primary {
     background-color: rgba(255, 255, 255, 0.75) !important;
@@ -207,6 +213,12 @@ dd {
         white-space: normal;
         height: auto;
     }
+
+    .content h2[id],
+    .content h3[id],
+    .content h4[id] {
+        scroll-margin-top: 4.75rem;
+    }
 }
 
 /* Gives rounded corners and a soft shadow to images, buttons and shapes and buttons */
@@ -223,133 +235,4 @@ figure {
     padding: 8px;
 }
 
-/* Community Music Links page spacing and rhythm */
-.community-links-page > p {
-    margin-bottom: 1rem;
-}
-
-.community-links-page .community-links-toc {
-    border-left: 4px solid rgba(230, 62, 47, 0.55);
-    background-color: rgba(109, 227, 238, 0.08);
-    padding: 0.9rem 1rem 0.85rem;
-    margin: 1rem 0 1.4rem;
-}
-
-.community-links-page .community-links-toc .title {
-    margin-top: 0;
-    margin-bottom: 0.45rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.community-links-page .community-links-toc ul {
-    margin-top: 0.2rem;
-    margin-bottom: 0;
-    padding-left: 1.15rem;
-}
-
-.community-links-page h2.title {
-    margin-top: 2.2rem;
-    margin-bottom: 0.95rem;
-    scroll-margin-top: 5.25rem;
-}
-
-.community-links-page h3.title {
-    margin-top: 1.45rem;
-    margin-bottom: 0.5rem;
-}
-
-.community-links-page h4.title {
-    margin-top: 1.05rem;
-    margin-bottom: 0.35rem;
-    font-size: 1.2rem;
-}
-
-.community-links-page ul {
-    margin-top: 0.2rem;
-    margin-bottom: 1rem;
-}
-
-.community-links-page li {
-    margin-bottom: 0.2rem;
-    line-height: 1.55;
-}
-
-.community-links-page #kids-music {
-    margin-top: 2.6rem;
-}
-
-@media (max-width: 768px) {
-    .community-links-page .community-links-toc {
-        padding: 0.8rem 0.8rem 0.75rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .community-links-page h2.title {
-        margin-top: 1.9rem;
-        margin-bottom: 0.8rem;
-        scroll-margin-top: 4.75rem;
-    }
-
-    .community-links-page h3.title {
-        margin-top: 1.2rem;
-    }
-
-    .community-links-page h4.title {
-        margin-top: 0.9rem;
-    }
-}
-
-/* Kids Music page readability and vertical rhythm */
-.kids-music-page .kids-intro {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.25rem;
-}
-
-.kids-music-page h2.title {
-    margin-top: 2.25rem;
-    margin-bottom: 1rem;
-}
-
-.kids-music-page h3.title {
-    margin-top: 1.6rem;
-    margin-bottom: 0.55rem;
-}
-
-.kids-music-page ul {
-    margin-top: 0.15rem;
-    margin-bottom: 0.9rem;
-    padding-left: 1.1rem;
-    list-style-position: outside;
-}
-
-.kids-music-page li {
-    line-height: 1.5;
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-}
-
-.kids-music-page .kids-footer-note {
-    margin-top: 1.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-    .kids-music-page .kids-intro,
-    .kids-music-page li,
-    .kids-music-page .kids-footer-note {
-        font-size: 1rem;
-    }
-
-    .kids-music-page h2.title {
-        margin-top: 1.9rem;
-    }
-
-    .kids-music-page h3.title {
-        margin-top: 1.2rem;
-    }
-}
 
