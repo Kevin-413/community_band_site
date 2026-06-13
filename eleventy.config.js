@@ -4,6 +4,7 @@ const siteConfig = require("./_data/config.json");
 module.exports = (config) => {
     config.addPassthroughCopy("src/_images");
     config.addPassthroughCopy("src/_css");
+    config.addPassthroughCopy("src/acb-concert-schedule.pdf");
 
     // Add responsive image shortcode
     config.addAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
