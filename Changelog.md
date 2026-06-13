@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Kids Music in Western Mass content (music education opportunities for children) integrated into Community Music Links
 
 ### Changed
+- Prevented top nav text crowding by reserving right-side space for the CONTACT button and aligning the button flush-right on tablet/desktop widths
+- Kept full nav text visible on desktop/tablet with hamburger menu limited to mobile, and updated the burger icon to white for contrast on the red header
+- Positioned the top-right CONTACT nav button flush to the right and updated its label styling to all-caps bold
 - Made the top-right Contact button larger, rounder, and more 3D-looking for clearer prominence
 - Restyled the season signup and concert schedule buttons to use the light button treatment with black text
 - Renamed the footer contact link to Webmaster

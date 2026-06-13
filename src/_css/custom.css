@@ -180,9 +180,30 @@ h4,
     color: white;
 }
 
+.navbar.is-primary .navbar-burger {
+    color: #ffffff;
+}
+
+.navbar.is-primary .navbar-burger span {
+    background-color: #ffffff;
+}
+
+.navbar.is-primary .navbar-burger:hover,
+.navbar.is-primary .navbar-burger:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.navbar.is-primary .container {
+    position: relative;
+}
+
 .acb-contact-nav-button {
-    margin-left: auto;
+    margin-left: 0;
     align-self: center;
+    position: absolute;
+    top: 50%;
+    right: 3.7rem;
+    z-index: 40;
     min-height: 2.9rem;
     height: auto;
     padding: 0.55rem 1.2rem;
@@ -197,19 +218,44 @@ h4,
         0 9px 16px rgba(0, 0, 0, 0.16),
         inset 0 1px 0 rgba(255, 255, 255, 0.95);
     color: #000000 !important;
-    font-weight: 700;
-    transform: translateY(-1px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transform: translateY(-50%);
     transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
 }
 
 .acb-contact-nav-button:hover,
 .acb-contact-nav-button:focus {
     color: #000000 !important;
-    transform: translateY(0);
+    transform: translateY(calc(-50% + 1px));
     box-shadow:
         0 2px 0 rgba(0, 0, 0, 0.18),
         0 6px 12px rgba(0, 0, 0, 0.14),
         inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+@media screen and (min-width: 769px) {
+    .navbar.is-primary .navbar-burger {
+        display: none;
+    }
+
+    .acb-contact-nav-button {
+        right: 1rem;
+    }
+
+    .navbar.is-primary .navbar-menu {
+        display: flex !important;
+        align-items: center;
+        flex-grow: 1;
+        flex-shrink: 0;
+        min-width: 0;
+        padding-right: 8.5rem;
+    }
+
+    .navbar.is-primary .navbar-start {
+        max-width: calc(100% - 8.5rem);
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -402,8 +448,8 @@ dd {
 @media (max-width: 768px) {
     .acb-contact-nav-button {
         font-size: 0.85rem;
-        padding: 0.3rem 0.65rem;
-        margin-left: 0.5rem;
+        padding: 0.36rem 0.72rem;
+        right: 3.5rem;
     }
 
     .acb-contact-modal .modal-card {
