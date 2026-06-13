@@ -33,10 +33,6 @@
         {
             "anchor": "About Us",
             "url": "/community_band_site/about/"
-        },
-        {
-            "anchor": "Community Music Links",
-            "url": "/community_band_site/community-music-links/"
         }
     ],
     "concerts":[
