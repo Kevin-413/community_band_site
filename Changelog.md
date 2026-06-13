@@ -7,11 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Logos and text on Mass Cultural Council and Amherst Cultural Council to bottom of homepage
+- Homepage funding logos and grant acknowledgment for Mass Cultural Council and Amherst Cultural Council
 - Pull request template to manage contributions
+- Community Music Links page with approved regional music links
+
+### Changed
+- Reconciled changelog records between the repo and docs workflow copy
+- Added Community Music Links item to site navigation
 
 ### Fixed
-- Updated homepage button link to old schedule page to new performances page
+- Updated homepage button link from the old schedule page to the Performances page
 
 ## [1.2.0] - 5/20/2026
 ### Added
@@ -29,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Summer concert series image due to mismatched times
 
-## [1.1.1].- 4/18/2026
+## [1.1.1] - 4/18/2026
 ### Added
 - Updated NPM packages
 
