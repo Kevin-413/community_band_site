@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Kids Music in Western Mass content (music education opportunities for children) integrated into Community Music Links
 
 ### Changed
+- Added a shared top-right Contact button and reusable Formspree contact modal so every page can open the same contact popup
+- Wired the contact form to Formspree with POST submission and named fields for ready-to-use contact handling
 - Implemented a cautious SEO/social metadata pass with improved page titles/descriptions, production-domain canonical URLs, Open Graph/Twitter card tags, default share image selection, and apple-touch-icon support
 - Updated Organization and MusicEvent JSON-LD metadata and confirmed robots.txt/sitemap outputs and key internal footer link targets under the project-path build
 - Applied an accessibility-focused button sizing pass: increased button tap targets, padding, and font sizes for CTA/readability while preserving site colors and layout

@@ -1,5 +1,4 @@
-// Allows the navbar burger menu to be populated
-document.addEventListener('DOMContentLoaded', () => {
+const initializeSiteInteractions = () => {
 
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -35,4 +34,62 @@ document.addEventListener('DOMContentLoaded', () => {
         flkty.playPlayer();
     }
 
-});
+    const contactModal = document.getElementById('contact-modal');
+    const contactTriggers = Array.prototype.slice.call(document.querySelectorAll('[data-contact-modal-open]'), 0);
+    const contactClosers = contactModal ? Array.prototype.slice.call(contactModal.querySelectorAll('[data-contact-modal-close]'), 0) : [];
+
+    if (contactModal && contactTriggers.length) {
+        const openContactModal = (trigger) => {
+            contactModal.classList.add('is-active');
+            document.documentElement.classList.add('is-clipped');
+            contactModal.setAttribute('aria-hidden', 'false');
+            if (trigger) {
+                trigger.setAttribute('aria-expanded', 'true');
+                contactModal.dataset.returnFocus = 'true';
+                contactModal._trigger = trigger;
+            }
+
+            const firstInput = contactModal.querySelector('#contact-demo-name');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        };
+
+        const closeContactModal = () => {
+            contactModal.classList.remove('is-active');
+            document.documentElement.classList.remove('is-clipped');
+            contactModal.setAttribute('aria-hidden', 'true');
+            if (contactModal._trigger) {
+                contactModal._trigger.setAttribute('aria-expanded', 'false');
+                contactModal._trigger.focus();
+            }
+            contactModal._trigger = null;
+        };
+
+        contactTriggers.forEach((trigger) => {
+            trigger.addEventListener('click', (event) => {
+                event.preventDefault();
+                openContactModal(trigger);
+            });
+        });
+
+        contactClosers.forEach((closer) => {
+            closer.addEventListener('click', () => {
+                closeContactModal();
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && contactModal.classList.contains('is-active')) {
+                closeContactModal();
+            }
+        });
+    }
+
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSiteInteractions);
+} else {
+    initializeSiteInteractions();
+}

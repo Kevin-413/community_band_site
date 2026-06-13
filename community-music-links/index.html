@@ -219,37 +219,40 @@
             <p class="mb-3">Have a question about the band, performances, donations, or getting involved?</p>
             <p class="mb-4 acb-contact-demo-note"><strong>Contact form demo - not yet connected.</strong> After approval, this modal can be connected to Formspree.</p>
 
-            <div class="field">
-                <label class="label" for="contact-demo-name">Your name</label>
-                <div class="control">
-                    <input class="input" id="contact-demo-name" type="text" name="contact-demo-name" autocomplete="name" placeholder="Your name">
+            <form action="https://formspree.io/f/xwvjakkl" method="POST">
+                <div class="field">
+                    <label class="label" for="contact-demo-name">Your name</label>
+                    <div class="control">
+                        <input class="input" id="contact-demo-name" type="text" name="name" autocomplete="name" placeholder="Your name">
+                    </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label" for="contact-demo-email">Your email</label>
-                <div class="control">
-                    <input class="input" id="contact-demo-email" type="email" name="contact-demo-email" autocomplete="email" placeholder="your.email@example.com">
+                <div class="field">
+                    <label class="label" for="contact-demo-email">Your email</label>
+                    <div class="control">
+                        <input class="input" id="contact-demo-email" type="email" name="email" autocomplete="email" placeholder="your.email@example.com">
+                    </div>
                 </div>
-            </div>
 
-            <div class="field mb-4">
-                <label class="label" for="contact-demo-message">Message</label>
-                <div class="control">
-                    <textarea class="textarea" id="contact-demo-message" name="contact-demo-message" rows="4" placeholder="How can we help?"></textarea>
+                <div class="field mb-4">
+                    <label class="label" for="contact-demo-message">Message</label>
+                    <div class="control">
+                        <textarea class="textarea" id="contact-demo-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+                    </div>
                 </div>
-            </div>
 
-            <div class="acb-contact-captcha-placeholder mb-4" role="note" aria-live="polite">
-                CAPTCHA/spam protection will appear here after Formspree approval.
-            </div>
+                <div class="acb-contact-captcha-placeholder mb-4" role="note" aria-live="polite">
+                    CAPTCHA/spam protection will appear here after Formspree approval.
+                </div>
 
-            <p class="is-size-7 has-text-grey-dark mb-0">Approved public contact email is still pending confirmation.</p>
+                <p class="is-size-7 has-text-grey-dark mb-4">Approved public contact email is still pending confirmation.</p>
+
+                <footer class="modal-card-foot is-justify-content-space-between is-flex-wrap-wrap">
+                    <button class="button" type="button" data-contact-modal-close>Close</button>
+                    <button class="button is-primary has-text-weight-bold has-text-white" type="submit">Send Message</button>
+                </footer>
+            </form>
         </section>
-        <footer class="modal-card-foot is-justify-content-space-between is-flex-wrap-wrap">
-            <button class="button" type="button" data-contact-modal-close>Close</button>
-            <button class="button is-primary has-text-weight-bold has-text-white" type="button" disabled aria-disabled="true">Send Message - demo only</button>
-        </footer>
     </div>
 </div>
 

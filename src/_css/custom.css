@@ -180,6 +180,17 @@ h4,
     color: white;
 }
 
+.acb-contact-nav-button {
+    margin-left: auto;
+    align-self: center;
+    min-height: 2.25rem;
+    height: auto;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
 @media screen and (min-width: 1024px) {
     .navbar.is-primary .navbar-start {
         flex-wrap: nowrap;
@@ -345,6 +356,39 @@ dd {
 
 .has-border {
     border: 12px solid #E63E2F;
+}
+
+.acb-contact-modal .modal-card {
+    width: min(92vw, 36rem);
+}
+
+.acb-contact-modal .modal-card-body {
+    max-height: min(70vh, 38rem);
+    overflow-y: auto;
+}
+
+.acb-contact-captcha-placeholder {
+    background: #f7f7f7;
+    border: 1px dashed #b5b5b5;
+    border-radius: 10px;
+    padding: 0.75rem 0.9rem;
+}
+
+.acb-contact-demo-note {
+    color: #4b5563;
+}
+
+@media (max-width: 768px) {
+    .acb-contact-nav-button {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.65rem;
+        margin-left: 0.5rem;
+    }
+
+    .acb-contact-modal .modal-card {
+        width: calc(100vw - 2rem);
+        margin: 0 1rem;
+    }
 }
 
 .acb-footer {
