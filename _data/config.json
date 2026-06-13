@@ -93,6 +93,16 @@
     ],
     "carouselImages":[
         {
+            "imgPath":"/_images/summer_2026.jpg",
+            "caption": "Announcing the 2026 Concert Schedule!",
+            "altText": "A collage listing Amherst Community Band concert dates for 2026"
+        },
+        {
+            "imgPath":"/_images/band1.png",
+            "caption": "Welcome to the Amherst Community Band.",
+            "altText":"Band beginning to play"
+        },
+        {
             "imgPath":"/_images/band3.png",
             "caption": "We are the Amherst <b>Community</b> Band.",
             "altText": "The whole band playing in the park"
@@ -101,6 +111,11 @@
             "imgPath": "/_images/band2.png",
             "caption": "We practice. We play. We perform. <b>Together</b>.",
             "altText":"Clarinets playing"
+        },
+        {
+            "imgPath": "/_images/band4.jpg",
+            "caption": "Fun. Friendships. <b>Shared experience</b>.",
+            "altText": "Band smiling in concert hall"
         }
     ]
 
