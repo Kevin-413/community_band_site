@@ -186,6 +186,16 @@ dd {
     margin-bottom: 1rem;
 }
 
+.content h4 + ul,
+.content h4 + ol {
+    margin-top: 0.45rem;
+}
+
+.content ul + h4,
+.content ol + h4 {
+    margin-top: 1.25rem;
+}
+
 .content h2[id],
 .content h3[id],
 .content h4[id] {

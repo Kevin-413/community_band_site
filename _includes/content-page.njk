@@ -6,7 +6,9 @@ layout: page.njk
         <div class="columns is-centered">
             <div class="column is-three-quarters">
                 <h1 class="title is-1 has-text-centered">{{ title }}</h1>
-                {{ content | safe }}
+                <div class="content">
+                    {{ content | safe }}
+                </div>
             </div>
         </div>
     </div>
