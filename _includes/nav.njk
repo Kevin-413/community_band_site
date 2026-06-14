@@ -17,9 +17,24 @@
         <div id="navigation-headers" class="navbar-menu">
             <div class="navbar-start">
                 {% for item in config.navbarMenu %}
-                    <a class="navbar-item" href="{{item.url}}">
-                        {{item.anchor}}
-                    </a>
+                    {% if item.children and item.children.length %}
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" href="{{item.url}}">
+                                {{item.anchor}}
+                            </a>
+                            <div class="navbar-dropdown">
+                                {% for child in item.children %}
+                                    <a class="navbar-item" href="{{child.url}}">
+                                        {{child.anchor}}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <a class="navbar-item" href="{{item.url}}">
+                            {{item.anchor}}
+                        </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

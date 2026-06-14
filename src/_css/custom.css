@@ -33,7 +33,6 @@
 }
 /* Corresponding hex color codes
 --color-1: #E63E2F;
---color-1: #EE786D;
 --color-2: #E3EE6D;
 --color-3: #6DE3EE;
 --color-4: #786DEE;
@@ -711,6 +710,12 @@ dd {
     object-fit: contain;
 }
 
+.acb-grant-logo-link .acb-mcc-logo {
+    width: min(220px, 100%);
+    max-height: 74px;
+    margin: 0 auto;
+}
+
 .acb-grant-note {
     margin-top: 0.75rem;
     margin-bottom: 0;
@@ -727,6 +732,11 @@ dd {
     .acb-grant-logo-link {
         flex-basis: 44vw;
         max-width: 210px;
+    }
+
+    .acb-grant-logo-link .acb-mcc-logo {
+        width: min(190px, 100%);
+        max-height: 62px;
     }
 
     .acb-grant-logo-link picture,

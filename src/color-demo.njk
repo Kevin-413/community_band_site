@@ -1,0 +1,211 @@
+---
+layout: page.njk
+title: ACB Color Demo
+description: Current Amherst Community Band colors, with the original palette first.
+---
+<style>
+.acb-color-demo-intro {
+    max-width: 60rem;
+    margin: 0 auto 1.5rem;
+}
+
+.acb-color-section {
+    margin-top: 2rem;
+}
+
+.acb-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.acb-color-card {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.acb-color-swatch {
+    min-height: 104px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.acb-color-swatch.is-dark {
+    color: #2e333d;
+}
+
+.acb-color-body {
+    padding: 1rem;
+}
+
+.acb-color-name {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.acb-color-value {
+    margin: 0 0 0.5rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.92rem;
+    word-break: break-word;
+}
+
+.acb-color-note {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.acb-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+</style>
+
+<div class="content acb-color-demo-intro">
+    <p>
+        This page keeps the original site colors first.
+        The older palette is shown before the newer button colors.
+        Use this as the current color reference for the website.
+    </p>
+</div>
+
+<h2 class="title is-3">Original colors</h2>
+<div class="acb-color-grid">
+    <article class="acb-color-card">
+        <div class="acb-color-swatch" style="background:#E63E2F;">Banner red</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Primary red</p>
+            <p class="acb-color-value">#E63E2F</p>
+            <p class="acb-color-note">The main Amherst red from the site palette.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:var(--acb-brand-yellow);">Brand yellow</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Brand yellow</p>
+            <p class="acb-color-value">var(--acb-brand-yellow)</p>
+            <p class="acb-color-note">The original brand accent used for the signup button.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:var(--acb-brand-yellow-strong);">Yellow strong</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Brand yellow strong</p>
+            <p class="acb-color-value">var(--acb-brand-yellow-strong)</p>
+            <p class="acb-color-note">Hover / stronger yellow from the current CSS variables.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch" style="background:#E3EE6D; color:#2e333d;">Legacy yellow-green</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Legacy yellow-green</p>
+            <p class="acb-color-value">#E3EE6D</p>
+            <p class="acb-color-note">Kept from the original palette notes in the stylesheet.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch" style="background:#6DE3EE; color:#2e333d;">Legacy sky blue</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Legacy sky blue</p>
+            <p class="acb-color-value">#6DE3EE</p>
+            <p class="acb-color-note">Another original palette note color.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch" style="background:#786DEE;">Legacy purple</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Legacy purple</p>
+            <p class="acb-color-value">#786DEE</p>
+            <p class="acb-color-note">A final legacy palette note color from the original comments.</p>
+        </div>
+    </article>
+</div>
+
+<h2 class="title is-3">Later UI colors</h2>
+<div class="acb-color-grid">
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:#f4d4df;">Download pink</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Download button pink</p>
+            <p class="acb-color-value">#f4d4df</p>
+            <p class="acb-color-note">Used by the schedule download button.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:#cfeea1;">Send green</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Contact send green</p>
+            <p class="acb-color-value">#cfeea1</p>
+            <p class="acb-color-note">Used by the contact SEND button.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:#ececec;">Close gray</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Contact close gray</p>
+            <p class="acb-color-value">#ececec</p>
+            <p class="acb-color-note">Used by the contact Close button.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch" style="background:#404654;">Body text</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Body text</p>
+            <p class="acb-color-value">#404654</p>
+            <p class="acb-color-note">Default body copy color on the site.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:#4b5563;">Muted note</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">Muted note text</p>
+            <p class="acb-color-value">#4b5563</p>
+            <p class="acb-color-note">Used for helper text and small notes.</p>
+        </div>
+    </article>
+
+    <article class="acb-color-card">
+        <div class="acb-color-swatch is-dark" style="background:#ffffff; color:#2e333d; border-top:1px solid #d9d9d9;">White</div>
+        <div class="acb-color-body">
+            <p class="acb-color-name">White</p>
+            <p class="acb-color-value">#ffffff</p>
+            <p class="acb-color-note">Cards, buttons, and general page surfaces.</p>
+        </div>
+    </article>
+</div>
+
+<h2 class="title is-3">Button samples</h2>
+<div class="acb-button-row buttons">
+    <a class="button is-primary acb-solid-button" href="#">Solid button</a>
+    <a class="button is-primary acb-signup-button" href="#">Signup yellow</a>
+    <a class="button is-primary acb-download-button" href="#">Download pink</a>
+    <a class="button acb-contact-send-button" href="#">Send green</a>
+    <a class="button acb-contact-close-button" href="#">Close gray</a>
+</div>
+
+<h2 class="title is-3">Notes</h2>
+<ul>
+    <li>The original colors are shown first so they stay closest to Virginia’s palette.</li>
+    <li>Keep this page aligned with <code>src/_css/custom.css</code> if colors change later.</li>
+    <li>Use the newer button colors only where they match the site’s current UI patterns.</li>
+</ul>
