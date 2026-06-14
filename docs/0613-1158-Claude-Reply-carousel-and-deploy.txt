@@ -1,0 +1,159 @@
+0613-1158-Claude-Reply-carousel-and-deploy.txt
+
+Amherst Community Band Site: Comprehensive Reply Outline
+
+1) Executive Summary
+- The live Kevin-413 GitHub Pages site is actively receiving fixes and deploys.
+- Major issues addressed in sequence:
+  - GitHub project-path breakage for images and internal links under /community_band_site.
+  - Carousel caption visibility regression.
+  - Carousel autoplay reliability and single-slide behavior tuning.
+- Current status at last check:
+  - Latest autoplay-forcing run exists and was still in progress at time of verification.
+
+2) Scope of Work Completed
+- Confirmed deployment states via GitHub Actions API for multiple commits.
+- Diagnosed pathing mismatch by comparing generated HTML against hosted path structure.
+- Applied and pushed fixes for:
+  - site base path handling in templates and config
+  - image URL generation path in Eleventy image shortcode
+  - internal nav and CTA links for project subpath compatibility
+  - Flickity carousel options for wraparound autoplay
+  - caption overlay rendering for slideshow text
+  - explicit JS-based Flickity initialization and autoplay trigger fallback
+
+3) Key File Paths Touched
+- _data/config.json
+- _includes/head.njk
+- _includes/page.njk
+- eleventy.config.js
+- src/index.njk
+- src/join.njk
+- src/donate.njk
+- src/404.njk
+- src/_css/custom.css
+- _includes/scripts.js
+
+4) Core Root Cause(s)
+A) Project Pages subpath issue
+- Hosted under: https://kevin-413.github.io/community_band_site/
+- HTML was using root-relative URLs such as /img/... and /join/... which resolve to the domain root, not the project subpath.
+- Result: broken images/links and confusing visual behavior.
+
+B) Carousel UX regressions across iterative fixes
+- Captions moved out of overlay context temporarily, appearing detached.
+- Autoplay behavior depended only on data-flickity attributes; some environments showed non-starting autoplay.
+
+5) Key Code Snippets
+
+5.1 src/index.njk (carousel options + caption class)
+Before (problematic state during troubleshooting):
+<div class="carousel" data-flickity='{"setGallerySize":true,"autoPlay":5000}'>
+  <p class="is-size-3 has-text-centered">{{ slide.caption|safe }}</p>
+
+After (tuned):
+<div class="carousel"
+data-flickity='{"setGallerySize":true,"imagesLoaded":true,"cellAlign":"left","contain":true,"autoPlay":4500,"wrapAround":true,"pauseAutoPlayOnHover":false}'>
+  <p class="carousel-caption">{{ slide.caption|safe }}</p>
+
+5.2 src/_css/custom.css (caption overlay styling)
+.carousel-cell {
+  width: 100%;
+  margin-right: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-cell .carousel-caption {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 2;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+5.3 eleventy.config.js (image URL base path)
+Before:
+urlPath: "/img/",
+
+After:
+const siteConfig = require("./_data/config.json");
+...
+urlPath: `${siteConfig.sitePath || ""}/img/`,
+
+5.4 _includes/scripts.js (explicit initialization fallback)
+const carouselEl = document.querySelector('.carousel');
+if (carouselEl && typeof Flickity !== 'undefined') {
+    const existing = Flickity.data(carouselEl);
+    const flkty = existing || new Flickity(carouselEl, {
+        setGallerySize: true,
+        imagesLoaded: true,
+        cellAlign: 'left',
+        contain: true,
+        autoPlay: 4500,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false
+    });
+    flkty.playPlayer();
+}
+
+5.5 _data/config.json (project-site compatibility)
+- Added/used:
+  - "siteUrl": "https://kevin-413.github.io/community_band_site"
+  - "sitePath": "/community_band_site"
+- Updated navbar item URLs to include /community_band_site/... paths.
+
+6) Inspection Evidence (Command-Level)
+
+6.1 Live HTML evidence of corrected subpath image URLs and carousel options
+- Observed in hosted homepage HTML:
+  - data-flickity includes autoPlay, wrapAround, imagesLoaded, cellAlign, contain
+  - image src/srcset includes /community_band_site/img/...
+  - caption class present as carousel-caption
+
+6.2 GitHub Actions evidence
+- Deploy run for commit 9d2f477:
+  - status: completed
+  - conclusion: success
+  - run URL: https://github.com/Kevin-413/community_band_site/actions/runs/27471485517
+
+- Deploy run for commit 42e5eed:
+  - seen in run listing with head_sha 42e5eedf272ab96663e5c4d75563b5bab2cff74a
+  - status at last check: in_progress
+  - run URL: https://github.com/Kevin-413/community_band_site/actions/runs/27471719616
+
+6.3 Remote branch evidence
+- fork/main pointed to latest pushed commit at verification time:
+  - 42e5eedf272ab96663e5c4d75563b5bab2cff74a
+
+7) Current Operational State
+- Path-prefix issue resolved and deployed in previous successful runs.
+- Caption overlay restored and deployed.
+- Autoplay tuning deployed.
+- Explicit JS autoplay fallback pushed; final run was in progress at last captured check.
+
+8) Risk / Follow-up Notes
+- If autoplay still appears inconsistent in certain browsers after run completion, likely causes:
+  - browser-level reduced motion preference behavior
+  - delayed script execution race with external Flickity asset load
+- Next hardening option if needed:
+  - add retry loop that waits for window.Flickity before calling playPlayer
+  - add visibilitychange handler to re-start when tab regains focus
+
+9) Quick Verification Checklist
+- Open: https://kevin-413.github.io/community_band_site/?v=manual-verify
+- Confirm:
+  - captions appear over images
+  - only one primary slide visible at a time
+  - carousel advances by itself within ~4.5 to 5 seconds
+  - nav links route to /community_band_site/... pages
+
+10) Timeline Snapshot
+- Enabled autoplay.
+- Fixed project subpath URL generation and internal links.
+- Restored caption overlay styling.
+- Tuned Flickity options for smoother single-slide loop.
+- Added explicit JS Flickity initialization + playPlayer fallback.

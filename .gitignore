@@ -24,3 +24,5 @@ node_modules/
 
 # Built site
 _site/
+# Local export archives
+ftp-homepage-show.zip

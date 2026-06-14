@@ -27,14 +27,14 @@ description: Amherst Community Band is an audition-free community band in Amhers
                 <p>Our Summer season is right around the corner. We're planning an exciting lineup of music and guest conductors. If you play an instrument, please consider joining us. All are welcome!</p>
                 <br>
                 <div class="has-text-centered acb-button-group">
-                    <a class="button is-primary acb-solid-button" href="https://docs.google.com/forms/d/1nuJW-ZWfX4PpOa5TBXrIaNZX7z1w-D5yCEj5n_BbWLw/edit#response=ACYDBNi9KF_sG6WK7TuISavmooIY58MvRhoPU1S-JDF0rV94UQX7Nj6rtuBnhbGfvvjCRj4">Amherst Community Band 2026 Season Signup Form</a>
-                    <a class="button is-primary acb-solid-button" href="{{ config.sitePath }}/acb-concert-schedule.pdf" download>Download 2026 Concert Schedule (PDF)</a>
+                    <a class="button is-primary acb-solid-button acb-signup-button" href="https://docs.google.com/forms/d/1nuJW-ZWfX4PpOa5TBXrIaNZX7z1w-D5yCEj5n_BbWLw/edit#response=ACYDBNi9KF_sG6WK7TuISavmooIY58MvRhoPU1S-JDF0rV94UQX7Nj6rtuBnhbGfvvjCRj4">Amherst Community Band 2026 Season Signup Form</a>
+                    <a class="button is-primary acb-solid-button acb-download-button" href="{{ config.sitePath }}/acb-concert-schedule.pdf" download>Download 2026 Concert Schedule (PDF)</a>
                 </div>
                 <br>
                 <p class="has-text-centered has-text-weight-bold">We are grateful to our scheduled guest conductors!</p>
                 <br>
                 <div class="columns is-centered">
-                    <div class="column is-narrow has-text-centered">
+                    <div class="column is-narrow has-text-centered acb-conductor-list">
                         <p><strong>June 27 &amp; July 3 Concerts</strong><br>
                         Dave Morris, Conductor<br>
                         Alexandria (Lexie) Black, Assistant Conductor</p>
@@ -75,7 +75,7 @@ description: Amherst Community Band is an audition-free community band in Amhers
             </div>
         </div>
         <div class="column is-flex">
-            <div class="container has-background-success has-text-centered p-5 has-soft-corners">
+            <div class="container acb-brand-yellow-bg has-text-centered p-5 has-soft-corners">
                 <p>We play concerts in Amherst, MA all summer long and have a holiday concert in December! All concerts are free and open to the public. After all, without an audience, it's only a rehearsal!</p>
                 <br>
                 <div class="container has-text-centered">
@@ -88,19 +88,15 @@ description: Amherst Community Band is an audition-free community band in Amhers
 </section>
 
 <section class="section pt-1">
-    <div class="columns is-centered is-8">
-        <div class="column is-3">
-            <a href="https://www.massculturalcouncil.org/">
-                {% image "src/_images/MCC_Logo_RGB_NoTag.png", "Mass Cultural Council Logo", "(max-height: auto)" %}
-            </a>
-        </div>
-        <div class="column is-3">
-            <a href="https://www.amherstma.gov/689/Cultural-Council">
-                {% image "src/_images/amherst_cultural_council.jpg", "Amherst Cultural Council Logo", "(max-height: auto)" %}
-            </a>
-        </div>
+    <div class="acb-grant-logos" aria-label="Grant partner logos">
+        <a class="acb-grant-logo-link" href="https://www.massculturalcouncil.org/">
+            {% image "src/_images/MCC_Logo_RGB_NoTag.png", "Mass Cultural Council Logo", "(max-height: auto)" %}
+        </a>
+        <a class="acb-grant-logo-link" href="https://www.amherstma.gov/689/Cultural-Council">
+            {% image "src/_images/amherst_cultural_council.jpg", "Amherst Cultural Council Logo", "(max-height: auto)" %}
+        </a>
     </div>
     <div class="container has-text-centered">
-        <h2 class="title is-4">This program is funded in part by a grant from the Amherst Cultural Council, a local agency which is supported by Mass Cultural Council, a state agency.</h2>
+        <h2 class="title is-4 acb-grant-note">This program is funded in part by a grant from the Amherst Cultural Council, a local agency which is supported by Mass Cultural Council, a state agency.</h2>
     </div>
 </section>

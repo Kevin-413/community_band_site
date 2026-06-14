@@ -9,6 +9,7 @@
             <a href="{{ config.sitePath }}/performances/">Schedule</a> ·
             <a href="{{ config.sitePath }}/join/">Join</a> ·
             <a href="{{ config.sitePath }}/donate/">Donate</a> ·
+            <a href="{{ config.sitePath }}/privacy/">Privacy Policy</a> ·
             <a href="https://forms.gle/m4ShiaED5SgKBNuz5" target="_blank" rel="noopener noreferrer">Webmaster</a> ·
             <a href="https://maps.app.goo.gl/GZFks1MQdtiHWw9TA" target="_blank" rel="noopener noreferrer">Directions</a>
         </p>
@@ -21,7 +22,7 @@
         </p>
 
         <p class="acb-footer-credit">Website by Virginia Partridge</p>
-        <p class="acb-footer-copyright">&copy; Amherst Community Band</p>
+        <p class="acb-footer-copyright">&copy; {{ currentYear }} Amherst Community Band</p>
     </div>
 </footer>
 
@@ -32,7 +33,7 @@
             <p class="modal-card-title" id="contact-modal-title">Contact Amherst Community Band</p>
             <button class="delete" type="button" aria-label="Close contact modal" data-contact-modal-close onclick="var modal=document.getElementById('contact-modal'); if (modal) { modal.classList.remove('is-active'); modal.setAttribute('aria-hidden','true'); } document.documentElement.classList.remove('is-clipped'); var trigger=document.querySelector('[data-contact-modal-open]'); if (trigger) { trigger.setAttribute('aria-expanded','false'); trigger.focus(); } return false;"></button>
         </header>
-        <form action="https://formspree.io/f/xwvjakkl" method="POST">
+        <form action="https://formspree.io/f/xwvjakkl" method="POST" onsubmit="return false;">
             <section class="modal-card-body">
                 <p class="mb-3">Have a question about the band, performances, donations, or getting involved?</p>
                 <p class="mb-4 acb-contact-demo-note"><strong>Contact form demo - not yet connected.</strong> After approval, this modal can be connected to Formspree.</p>
@@ -40,21 +41,21 @@
                 <div class="field">
                     <label class="label" for="contact-demo-name">Your name</label>
                     <div class="control">
-                        <input class="input" id="contact-demo-name" type="text" name="name" autocomplete="name" placeholder="Your name">
+                        <input class="input" id="contact-demo-name" type="text" name="name" autocomplete="name" placeholder="Your name" required>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="contact-demo-email">Your email</label>
                     <div class="control">
-                        <input class="input" id="contact-demo-email" type="email" name="email" autocomplete="email" placeholder="your.email@example.com">
+                        <input class="input" id="contact-demo-email" type="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
                     </div>
                 </div>
 
                 <div class="field mb-4">
                     <label class="label" for="contact-demo-message">Message</label>
                     <div class="control">
-                        <textarea class="textarea" id="contact-demo-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+                        <textarea class="textarea" id="contact-demo-message" name="message" rows="4" placeholder="How can we help?" required></textarea>
                     </div>
                 </div>
 
@@ -62,11 +63,11 @@
                     CAPTCHA/spam protection will appear here after Formspree approval.
                 </div>
 
-                <p class="is-size-7 has-text-grey-dark mb-0">Approved public contact email is still pending confirmation.</p>
+                <p class="is-size-7 has-text-grey-dark mb-0"><a href="{{ config.sitePath }}/privacy/">PRIVATE POLICY</a></p>
             </section>
             <footer class="modal-card-foot is-justify-content-space-between is-flex-wrap-wrap">
-                <button class="button" type="button" data-contact-modal-close onclick="var modal=document.getElementById('contact-modal'); if (modal) { modal.classList.remove('is-active'); modal.setAttribute('aria-hidden','true'); } document.documentElement.classList.remove('is-clipped'); var trigger=document.querySelector('[data-contact-modal-open]'); if (trigger) { trigger.setAttribute('aria-expanded','false'); trigger.focus(); } return false;">Close</button>
-                <button class="button is-primary has-text-weight-bold has-text-white" type="submit">Send Message</button>
+                <button class="button acb-contact-close-button" type="button" data-contact-modal-close onclick="var modal=document.getElementById('contact-modal'); if (modal) { modal.classList.remove('is-active'); modal.setAttribute('aria-hidden','true'); } document.documentElement.classList.remove('is-clipped'); var trigger=document.querySelector('[data-contact-modal-open]'); if (trigger) { trigger.setAttribute('aria-expanded','false'); trigger.focus(); } return false;">Close</button>
+                <button class="button has-text-weight-bold acb-contact-send-button acb-contact-send-disabled" type="button" disabled aria-disabled="true">SEND</button>
             </footer>
         </form>
     </div>

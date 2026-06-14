@@ -4,27 +4,27 @@ title: Concert Schedule
 description: See the Amherst Community Band concert schedule with performance dates, times, and locations in Amherst and nearby communities.
 ---
 <div class="columns">
-    <div class="column is-one-half is-offset-1">
+    <div class="column is-one-half is-offset-1 acb-performances-list">
         <div class="container pl-6">
-        <p>All concert times are listed in Eastern Time.</p>
         {% for category in config.concerts %}
             <h2 class="title is-2">{{ category.label }}</h2>
             {% for concert in category.schedule_items %}
-                <h3 class="title is-4 mb-2">
-                    {% if concert.start_iso %}
-                        <time datetime="{{ concert.start_iso }}">{{ concert.date_and_time }}</time>
-                    {% else %}
-                        {{ concert.date_and_time }}
+                <div class="acb-performance-item">
+                    <h3 class="title is-4 mb-2 acb-performance-date">
+                        {% if concert.start_iso %}
+                            <time datetime="{{ concert.start_iso }}">{{ concert.date_and_time }}</time>
+                        {% else %}
+                            {{ concert.date_and_time }}
+                        {% endif %}
+                    </h3>
+                    {% if concert.concert_name %}
+                        <p class="subtitle is-6 mb-2 acb-performance-meta">{{ concert.concert_name }}</p>
                     {% endif %}
-                </h3>
-                {% if concert.concert_name %}
-                    <p class="subtitle is-6 mb-2">{{ concert.concert_name }}</p>
-                {% endif %}
-                <p class="subtitle is-6 mb-2">{{ concert.location_name or concert.location }}</p>
-                {% if concert.location_address %}
-                    <p class="subtitle is-6 mb-2">{{ concert.location_address }}</p>
-                {% endif %}
-                <br>
+                    <p class="subtitle is-6 mb-2 acb-performance-meta">{{ concert.location_name or concert.location }}</p>
+                    {% if concert.location_address %}
+                        <p class="subtitle is-6 mb-2 acb-performance-meta">{{ concert.location_address }}</p>
+                    {% endif %}
+                </div>
             {% endfor %}
         {% endfor %}
         </div>
@@ -33,6 +33,9 @@ description: See the Amherst Community Band concert schedule with performance da
         <figure class="has-soft-corners image is-4by3">
             <iframe class="has-ratio" width="640" height="390" src="https://www.youtube.com/embed/Ip_l4Xkx-84?si=pu06PLu09FGJQytm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </figure>
+        <div class="has-text-centered mt-6">
+            <a class="button is-primary acb-download-button" href="{{ config.sitePath }}/acb-concert-schedule.pdf" download>Download 2026 Concert Schedule (PDF)</a>
+        </div>
     </div>
 </div>
 

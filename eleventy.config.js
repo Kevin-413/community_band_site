@@ -2,6 +2,8 @@ const Image = require("@11ty/eleventy-img");
 const siteConfig = require("./_data/config.json");
 
 module.exports = (config) => {
+    config.addGlobalData("currentYear", () => new Date().getFullYear());
+
     config.addPassthroughCopy("src/_images");
     config.addPassthroughCopy("src/_css");
     config.addPassthroughCopy("src/acb-concert-schedule.pdf");

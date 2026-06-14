@@ -13,6 +13,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Kids Music in Western Mass content (music education opportunities for children) integrated into Community Music Links
 
 ### Changed
+- Increased Donate page intro paragraph text size for readability
+- Restyled the Donate on Zeffy button to green with larger, bolder label text
+- Moved the Contact popup PRIVATE POLICY link to the modal body line, made the Close button light grey, and applied a 3D button style across site buttons
+- Added a Privacy Policy page and linked it in the footer and Contact popup
+- Marked all Contact popup form fields as required (name, email, and message)
+- Updated the Contact popup button label to SEND and increased its visual size
+- Styled the Contact popup Send button with a light grass-green appearance
+- Temporarily disabled contact form sending and applied a strikethrough style to the Send Message button
+- Corrected the global type scale so .title.is-3 uses the h3 size tier (reducing oversized heading jumps across pages)
+- Added auto-updating year to the footer copyright line
+- Removed the "All concert times are listed in Eastern Time." line from the Performances page
+- Tightened vertical spacing between concert groups on the Performances page
+- Balanced Performances page typography by bringing date and location text sizes closer together within the site style system
+- Corrected the McGuirk Stadium concert ZIP code in the schedule address
+- Increased spacing between the Performances page video and its Download 2026 Concert Schedule button
+- Added a Download 2026 Concert Schedule button below the video on the Performances page
+- Increased homepage guest-conductor block font sizing for better readability
+- Set Season Signup Form buttons to yellow and concert schedule Download buttons to pink across the site
+- Reduced the homepage grant acknowledgment text size so the funding note reads modestly beneath the logos
+- Kept the grant logos on a single row with constrained sizing so they stay small and side-by-side when zoomed
 - Prevented top nav text crowding by reserving right-side space for the CONTACT button and aligning the button flush-right on tablet/desktop widths
 - Kept full nav text visible on desktop/tablet with hamburger menu limited to mobile, and updated the burger icon to white for contrast on the red header
 - Positioned the top-right CONTACT nav button flush to the right and updated its label styling to all-caps bold
