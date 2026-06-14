@@ -6,7 +6,7 @@ module.exports = (config) => {
 
     config.addPassthroughCopy("src/_images");
     config.addPassthroughCopy("src/_css");
-    config.addPassthroughCopy("src/acb-concert-schedule.pdf");
+    config.addPassthroughCopy("src/docs");
 
     // Add responsive image shortcode
     config.addAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {

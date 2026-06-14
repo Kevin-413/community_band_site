@@ -5,7 +5,7 @@
     "sitePath": "/community_band_site",
     "url": "/",
     "logoUrl": "/_images/acb_logo.jpg",
-    "defaultShareImage": "/_images/summer_2026.jpg",
+    "defaultShareImage": "/_images/band5.jpeg",
     "organization": {
         "sameAs": [
             "https://facebook.com/AmherstCommunityBand"
@@ -91,7 +91,7 @@
     ],
     "carouselImages":[
         {
-            "imgPath":"/_images/summer_2026.jpg",
+            "imgPath":"/_images/band5.jpeg",
             "caption": "Announcing the 2026 Concert Schedule!",
             "altText": "A collage listing Amherst Community Band concert dates for 2026"
         },
