@@ -467,6 +467,10 @@ dd {
 .home-info-card,
 .home-action-card {
     border: 1px solid rgba(50, 56, 67, 0.08);
+    width: 100%;
+    min-height: 13.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .home-info-card {
