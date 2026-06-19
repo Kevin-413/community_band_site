@@ -4,6 +4,20 @@ const siteConfig = require("./_data/config.json");
 module.exports = (config) => {
     config.addGlobalData("currentYear", () => new Date().getFullYear());
 
+    config.addFilter("withBase", (path = "") => {
+        if (typeof path !== "string") {
+            return path;
+        }
+
+        // Keep absolute URLs, anchors, and non-root relative paths untouched.
+        if (/^(https?:)?\/\//.test(path) || path.startsWith("#") || !path.startsWith("/")) {
+            return path;
+        }
+
+        const basePath = (siteConfig.sitePath || "").replace(/\/$/, "");
+        return `${basePath}${path}`;
+    });
+
     config.addPassthroughCopy("src/_images");
     config.addPassthroughCopy("src/_css");
     config.addPassthroughCopy("src/docs");
