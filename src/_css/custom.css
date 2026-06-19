@@ -337,10 +337,10 @@ dd {
     color: #2e333d !important;
     font-weight: 500 !important;
     border-color: transparent !important;
-    min-height: 48px;
+    min-height: 40px;
     height: auto;
-    padding: 0.75rem 1.25rem;
-    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
     line-height: 1.2;
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2), 0 8px 14px rgba(0, 0, 0, 0.14);
     transform: translateY(-1px);
@@ -376,10 +376,10 @@ dd {
 }
 
 .button.is-large {
-    min-height: 52px;
+    min-height: 44px;
     height: auto;
-    padding: 0.85rem 1.4rem;
-    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
     line-height: 1.2;
 }
 
