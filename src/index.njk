@@ -19,7 +19,13 @@ description: The homepage of the Amherst Community Band from Amherst, Massachuse
 </section>
 
 <section class="section pt-2 pb-4">
-    <!-- ⚠️ UPDATE THIS SECTION for future concert announcements ⚠️ -->
+    <!-- ⚠️ NEXT CONCERT UPDATE SECTION ⚠️
+         Update this entire section with the next concert details:
+         - Change the h2 title to the next concert name
+         - Update all paragraphs with new concert info (date, time, location)
+         - Update the description text below
+         Keep the same blue background (has-background-info-light) and styling
+    -->
     <div class="home-welcome has-soft-corners p-5 has-background-info-light">
         <h2 class="title is-2 has-text-centered mb-3">Free Outdoor Concert of American Music</h2>
         <p class="is-size-5 has-text-centered has-text-weight-bold mb-4">
@@ -35,6 +41,7 @@ description: The homepage of the Amherst Community Band from Amherst, Massachuse
                 This concert is supported by the Amherst Cultural Council, Mass Cultural Council, UMass Amherst, and the Town of Amherst.
         </p>
     </div>
+    <!-- END OF CONCERT SECTION -->
 </section>
 
 <section class="section pt-2">
@@ -56,6 +63,7 @@ description: The homepage of the Amherst Community Band from Amherst, Massachuse
 <section class="section pt-3 pb-3">
     <div class="columns is-variable is-4">
         <div class="column is-half-desktop is-half-tablet is-full-mobile is-flex">
+            <!-- NOTE: Next Concert info comes from _data/config.json concerts list - update config to change this section -->
             <article class="home-info-card has-soft-corners p-5">
                 <h2 class="title is-4">Next Concert</h2>
                 <p class="is-size-6 has-text-weight-semibold mb-2">{{ firstConcert.date_and_time }}</p>
@@ -68,6 +76,7 @@ description: The homepage of the Amherst Community Band from Amherst, Massachuse
         </div>
 
         <div class="column is-half-desktop is-half-tablet is-full-mobile is-flex">
+            <!-- NOTE: Rehearsal info comes from _data/config.json rehearsals list - update config to change this section -->
             <article class="home-info-card has-soft-corners p-5">
                 <h2 class="title is-4">Rehearsal Information</h2>
                 <p class="is-size-6 has-text-weight-semibold mb-2">{{ config.rehearsals[0].label }}</p>
