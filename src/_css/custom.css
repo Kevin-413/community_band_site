@@ -463,6 +463,36 @@ dd {
     color: #2e333d !important;
 }
 
+/* Homepage tile colors restored from ACB palette */
+.home-info-card,
+.home-action-card {
+    border: 1px solid rgba(50, 56, 67, 0.08);
+}
+
+.home-info-card {
+    background-color: #f6efad;
+}
+
+.section .columns.is-variable > .column:nth-child(2) .home-info-card {
+    background-color: #d6ecf8;
+}
+
+.section .columns.is-multiline > .column:nth-child(1) .home-action-card {
+    background-color: #d9efc4;
+}
+
+.section .columns.is-multiline > .column:nth-child(2) .home-action-card {
+    background-color: #f6efad;
+}
+
+.section .columns.is-multiline > .column:nth-child(3) .home-action-card {
+    background-color: #d6ecf8;
+}
+
+.section .columns.is-multiline > .column:nth-child(4) .home-action-card {
+    background-color: #f4d4df;
+}
+
 .button.acb-donate-button,
 .button.is-primary.acb-donate-button {
     background-color: #9ad97f !important;
